@@ -14,4 +14,14 @@ This repository contains 3 python scripts:
 
 ## Conda environment
 To run the code you will need to set up an appropriate conda environment. 
-We provide yml files so that you can build directly the conda environment for your machine.
+We provide yml files so that you can build directly the conda environment for your machine in the folder `conda_environments`. 
+You can select the environment more suited for your Operating System (OS) and then create the environment with:
+
+`conda env create --file environment.yml`
+
+(replacing environment.yml with the appropriate name of the environment file for your machine). And activate it with:
+
+`conda activate app`
+
+Use:
+* `environment_WindowsOS.yml` for Windows Operating Systems 
