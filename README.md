@@ -11,3 +11,7 @@ This repository contains 3 python scripts:
 * `gw_data_plotter.py`: main script; to get the app just execute on a terminal `python gw_data_plotter.py`
 * `layout.py`: it is imported by the main script and contains the details of the layout of the app
 * `app_resources.py`: it is imported by the main script and contains the resources used by the app
+
+## Conda environment
+To run the code you will need to set up an appropriate conda environment. 
+We provide yml files so that you can build directly the conda environment for your machine.
