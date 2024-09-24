@@ -24,4 +24,7 @@ You can select the environment more suited for your Operating System (OS) and th
 `conda activate app`
 
 Use:
-* `environment_WindowsOS.yml` for Windows Operating Systems 
+* `environment_LinuxOS.yml` for Linux users;
+* `environment_MacOS_arm64.yml` for Mac users with an Apple processor;
+* `environment_MacOS_x86_64.yml` for Mac users with an Intel processor;
+* `environment_WindowsOS.yml` for Windows users.
