@@ -5,3 +5,9 @@ This reposity contains the source files to run the GW Data Plotter App from a py
 The code is based on [PyQt6](https://www.riverbankcomputing.com/software/pyqt/) for the graphical interface, and
 [gwpy](https://gwpy.github.io) and [gwosc](https://pypi.org/project/gwosc/) python packages for the gravitational wave 
 related part.
+
+## Description of the python scripts
+This repository contains 3 python scripts:
+* `gw_data_plotter.py`: main script; to get the app just execute on a terminal `python gw_data_plotter.py`
+* `layout.py`: it is imported by the main script and contains the details of the layout of the app
+* `app_resources.py`: it is imported by the main script and contains the resources used by the app
