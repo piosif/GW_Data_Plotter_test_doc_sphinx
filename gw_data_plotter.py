@@ -3,8 +3,12 @@ import math
 import sys
 import json
 import traceback
-import re 
+import re
+
+# PI trial: replace urllib with requests
 import urllib.request
+import requests
+
 import numpy as np
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas #for plotting
 from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
@@ -1672,7 +1676,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def display_skymap(self):
 
         event = self.verify_correct_event_name(self.comboBox_4.currentText(), self.EventNameTab3.text())
-            
+
         #the method verify_correct_event_name will return 0 if the event name is not reasonable
         if event:
             self.event_tab3 = event
@@ -1694,12 +1698,24 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 try:
                     # I need to check which skymaps are available on gracedb
                     list_available_png = []
+                #-------------------------
+                #PI trial: replace urllib with requests
                     with urllib.request.urlopen(f"https://gracedb.ligo.org/api/superevents/{gracedb_id}/files/?format=json") as url:
                         data = json.load(url)
                         for key in data:
                             if 'png' in key and 'volume' not in key:
                                 list_available_png.append(key)
-                    print(list_available_png)
+                    # response = requests.get(f"https://gracedb.ligo.org/api/superevents/{gracedb_id}/files/?format=json")
+                    # data = response.json()
+                    # print(data)
+                    # for key in data:
+                    #     if 'png' in key and 'volume' not in key:
+                    #         list_available_png.append(key)
+                    #-------------------------        
+
+                    # print(list_available_png)
+                    print('here is the list oof available png:', list_available_png)
+
                     for png in list_available_png:
                         if 'PublicationSamples' in png:
                             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{self.event_tab3}_PublicationSamples.png"
@@ -1717,8 +1733,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"    
                             skymap_file = f"{self.event_tab3}_skymap.png"
                     found_gracedb = True 
-
-                except:
+                  
+                except Exception as e:
+                    self.write_log_event("Something went wrong!")
+                    self.write_log_event(f"This error occurred: {e}")     
                     link_skymap = f"https://ligo.gravity.cf.ac.uk/~chris.north/gwcat-data/data/png/{self.event_tab3}_moll_pretty.png"
                     #link_skymap = f"https://gracedb.ligo.org/events/{gracedb_id}/files/LALInference_skymap.png"
                     skymap_file = f"{self.event_tab3}_skymap.png"
@@ -1748,7 +1766,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     break
                 
                 print("filename",filename)               
+                
+
+                #-------------------------
+                #PI trial: replace urllib with requests
                 urllib.request.urlretrieve(link_skymap, filename)
+                # response = requests.get(link_skymap)
+                # with open(filename, 'wb') as file:
+                #     file.write(response.content)
+                #-------------------------        
+    
+
                 dialog = QtWidgets.QDialog()
                 lay = QtWidgets.QVBoxLayout(dialog)
             
