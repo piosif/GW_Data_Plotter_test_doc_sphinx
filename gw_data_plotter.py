@@ -1560,7 +1560,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
         msg.setText("Warning")
         msg.setInformativeText(text)
-        msg.setWindowTitle("MessageBox demo")
+        msg.setWindowTitle("Warning")
         msg.setDetailedText(details)
         
         
@@ -1767,20 +1767,27 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 else:
                     for png in list_available_png:
                         if 'PublicationSamples' in png:
-                            link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{self.event_tab3}_PublicationSamples.png"
-                            skymap_file = f"{self.event_tab3}_PublicationSamples.png"
+                            # link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{self.event_tab3}_PublicationSamples.png"
+                            # skymap_file = f"{self.event_tab3}_PublicationSamples.png"
+                            link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"
+                            skymap_file = f"{png}"
                             break
                         elif 'LALInference' in png:
-                            link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/LALInference.png"
-                            skymap_file = f"{self.event_tab3}_LALInference_skymap.png"
+                            # link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/LALInference.png"
+                            # skymap_file = f"{self.event_tab3}_LALInference_skymap.png"
+                            link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"
+                            skymap_file = f"{png}"
                             break
                         elif 'bayestar' in png:
-                            link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/bayestar.png"
-                            skymap_file = f"{self.event_tab3}_bayestar_skymap.png"
+                            # link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/bayestar.png"
+                            # skymap_file = f"{self.event_tab3}_bayestar_skymap.png"
+                            link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"
+                            skymap_file = f"{png}"
                             break
                         else:
                             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"    
-                            skymap_file = f"{self.event_tab3}_skymap.png"
+                            # skymap_file = f"{self.event_tab3}_skymap.png"
+                            skymap_file = f"{png}"
                     found_gracedb = True
                 #-------------------------     
 
@@ -1788,7 +1795,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 print('link_skymap',link_skymap)
                 print('found_gracedb',found_gracedb)
             
-                warn_text = f"You will now choose the directory where to save the {skymap_file}. The file will be displyed after you save it."
+                warn_text = f"You will now choose the directory where to save the {skymap_file}. The file will be displayed after you save it."
                 warn_details = f"You can also retrieve the same file at the url {link_skymap}"
                 if(not found_gracedb):
                     warn_text += "\nFor this event the original skymap provided from the LVK via the gracedb website cannot be downloaded so an alternative is provided."
