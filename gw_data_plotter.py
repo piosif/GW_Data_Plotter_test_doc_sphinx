@@ -1612,8 +1612,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             #add a check to verify that this event exists...
             event_ok = True
         else:
-#            self.write_log_event("Please chose only one option between writing the event name and selecting from a list")
-            textw = f"Please chose only one option between writing the event name and selecting from a list"
+#            self.write_log_event("Please choose only one option between writing the event name and selecting from a list")
+            textw = f"Please choose only one option between writing the event name and selecting from a list"
             detailsw = f"Verify that the drop down menu is set to None when you write the event name in the text box"
             self.showdialogWarning(textw, detailsw)
         return event_name
@@ -1652,7 +1652,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
                 
                 #print also the links to download the skymaps and the files with all the PE samples
-                #I have to chose a PE sample version to do so
+                #I have to choose a PE sample version to do so
                 pe_v = version
                 for pe in info['events'][version]['parameters']:
                     if 'combined' in pe:
@@ -1688,34 +1688,83 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 #print('version',version)
 
                 #check for graceDB link:
-                #print('graceDB',info['events'][version]['gracedb_id'])
+                print('graceDB',info['events'][version]['gracedb_id'])
             
                 gracedb_id = info['events'][version]['gracedb_id']
 
 
                 #if possible download the skymaps via grace db
                 found_gracedb = False
-                try:
-                    # I need to check which skymaps are available on gracedb
-                    list_available_png = []
-                #-------------------------
-                #PI trial: replace urllib with requests
-                    with urllib.request.urlopen(f"https://gracedb.ligo.org/api/superevents/{gracedb_id}/files/?format=json") as url:
-                        data = json.load(url)
-                        for key in data:
-                            if 'png' in key and 'volume' not in key:
-                                list_available_png.append(key)
-                    # response = requests.get(f"https://gracedb.ligo.org/api/superevents/{gracedb_id}/files/?format=json")
-                    # data = response.json()
-                    # print(data)
-                    # for key in data:
-                    #     if 'png' in key and 'volume' not in key:
-                    #         list_available_png.append(key)
-                    #-------------------------        
+                # try:
+                #     # I need to check which skymaps are available on gracedb
+                #     list_available_png = []
+                #     with urllib.request.urlopen(f"https://gracedb.ligo.org/api/superevents/{gracedb_id}/files/?format=json") as url:
+                #         data = json.load(url)                        
+                #         for key in data:
+                #             if 'png' in key and 'volume' not in key:
+                #                 list_available_png.append(key)
+                    
+                #     # print(list_available_png)
+                #     print('list of available png:', list_available_png)
 
-                    # print(list_available_png)
-                    print('here is the list oof available png:', list_available_png)
+                #     for png in list_available_png:
+                #         if 'PublicationSamples' in png:
+                #             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{self.event_tab3}_PublicationSamples.png"
+                #             skymap_file = f"{self.event_tab3}_PublicationSamples.png"
+                #             break
+                #         elif 'LALInference' in png:
+                #             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/LALInference.png"
+                #             skymap_file = f"{self.event_tab3}_LALInference_skymap.png"
+                #             break
+                #         elif 'bayestar' in png:
+                #             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/bayestar.png"
+                #             skymap_file = f"{self.event_tab3}_bayestar_skymap.png"
+                #             break
+                #         else:
+                #             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"    
+                #             skymap_file = f"{self.event_tab3}_skymap.png"
+                #     found_gracedb = True
+                  
+                # except Exception as e:
+                #     self.write_log_event("Something went wrong!")
+                #     self.write_log_event(f"Type of the exception: {type(e)}") 
+                #     self.write_log_event(f"This error occurred: {e}")
+                #     link_skymap = f"https://ligo.gravity.cf.ac.uk/~chris.north/gwcat-data/data/png/{self.event_tab3}_moll_pretty.png"
+                #     #link_skymap = f"https://gracedb.ligo.org/events/{gracedb_id}/files/LALInference_skymap.png"
+                #     skymap_file = f"{self.event_tab3}_skymap.png"
 
+
+
+                #-------------------------                
+                # PI trial: replace 'urllib' with 'requests' library
+                # re-write the above 'try-except' code block as an 'if-else' block, as no Errors are raised using the 'requests' library
+                
+                # I need to check which skymaps are available on gracedb
+                list_available_png = []
+
+
+                # get url with 'requests'
+                response = requests.get(f"https://gracedb.ligo.org/api/superevents/{gracedb_id}/files/?format=json")
+                print('response status:', response.status_code)
+                data = response.json()
+                print(data)
+                for key in data:
+                    if 'png' in key and 'volume' not in key:
+                        list_available_png.append(key)
+
+                # print(list_available_png)
+                print('list of available png:', list_available_png)
+
+
+                # If the list of available PNG files is empty, it means that no skymap is present on GraceDB. 
+                # In this case we get the skymap from the gwcat database.
+                if not list_available_png:
+                    self.write_log_event("No PNG files available from GraceDB. Getting skymap from the gwcat database...")
+                    link_skymap = f"https://ligo.gravity.cf.ac.uk/~chris.north/gwcat-data/data/png/{self.event_tab3}_moll_pretty.png"
+                    #link_skymap = f"https://gracedb.ligo.org/events/{gracedb_id}/files/LALInference_skymap.png"
+                    skymap_file = f"{self.event_tab3}_skymap.png"
+
+                else:
                     for png in list_available_png:
                         if 'PublicationSamples' in png:
                             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{self.event_tab3}_PublicationSamples.png"
@@ -1732,26 +1781,21 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         else:
                             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"    
                             skymap_file = f"{self.event_tab3}_skymap.png"
-                    found_gracedb = True 
-                  
-                except Exception as e:
-                    self.write_log_event("Something went wrong!")
-                    self.write_log_event(f"This error occurred: {e}")     
-                    link_skymap = f"https://ligo.gravity.cf.ac.uk/~chris.north/gwcat-data/data/png/{self.event_tab3}_moll_pretty.png"
-                    #link_skymap = f"https://gracedb.ligo.org/events/{gracedb_id}/files/LALInference_skymap.png"
-                    skymap_file = f"{self.event_tab3}_skymap.png"
-                
+                    found_gracedb = True
+                #-------------------------     
+
+
                 print('link_skymap',link_skymap)
                 print('found_gracedb',found_gracedb)
             
-                warn_text = f"You will now chose the directory where to save the {skymap_file}. The file will be displyed after you save it."
+                warn_text = f"You will now choose the directory where to save the {skymap_file}. The file will be displyed after you save it."
                 warn_details = f"You can also retrieve the same file at the url {link_skymap}"
                 if(not found_gracedb):
                     warn_text += "\nFor this event the original skymap provided from the LVK via the gracedb website cannot be downloaded so an alternative is provided."
                 self.showdialogWarning(warn_text, warn_details)
                 
                 
-                #open. window to chose where to save the file
+                #open. window to choose where to save the file
                 
                 # Loop to reopen the save file dialog with the suggested filename if the user changes it
                 while True:
@@ -1770,10 +1814,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
                 #-------------------------
                 #PI trial: replace urllib with requests
-                urllib.request.urlretrieve(link_skymap, filename)
-                # response = requests.get(link_skymap)
-                # with open(filename, 'wb') as file:
-                #     file.write(response.content)
+                # urllib.request.urlretrieve(link_skymap, filename)
+                response_skymap_file = requests.get(link_skymap)
+                with open(filename, 'wb') as file:
+                    file.write(response_skymap_file.content)
+
                 #-------------------------        
     
 
@@ -1798,8 +1843,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 dialog.exec()
             except Exception as e:
                 self.write_log_event("Something went wrong!")
+                self.write_log_event(f"Type of the exception: {type(e)}") 
                 self.write_log_event(f"This error occurred: {e}")
-                
+
+
+
 ############################
 
     def get_catalogs(self):
