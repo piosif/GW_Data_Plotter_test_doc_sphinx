@@ -1688,72 +1688,28 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 #print('version',version)
 
                 #check for graceDB link:
-                print('graceDB',info['events'][version]['gracedb_id'])
+                # print('graceDB',info['events'][version]['gracedb_id'])
             
                 gracedb_id = info['events'][version]['gracedb_id']
 
 
                 #if possible download the skymaps via grace db
                 found_gracedb = False
-                # try:
-                #     # I need to check which skymaps are available on gracedb
-                #     list_available_png = []
-                #     with urllib.request.urlopen(f"https://gracedb.ligo.org/api/superevents/{gracedb_id}/files/?format=json") as url:
-                #         data = json.load(url)                        
-                #         for key in data:
-                #             if 'png' in key and 'volume' not in key:
-                #                 list_available_png.append(key)
-                    
-                #     # print(list_available_png)
-                #     print('list of available png:', list_available_png)
 
-                #     for png in list_available_png:
-                #         if 'PublicationSamples' in png:
-                #             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{self.event_tab3}_PublicationSamples.png"
-                #             skymap_file = f"{self.event_tab3}_PublicationSamples.png"
-                #             break
-                #         elif 'LALInference' in png:
-                #             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/LALInference.png"
-                #             skymap_file = f"{self.event_tab3}_LALInference_skymap.png"
-                #             break
-                #         elif 'bayestar' in png:
-                #             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/bayestar.png"
-                #             skymap_file = f"{self.event_tab3}_bayestar_skymap.png"
-                #             break
-                #         else:
-                #             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"    
-                #             skymap_file = f"{self.event_tab3}_skymap.png"
-                #     found_gracedb = True
-                  
-                # except Exception as e:
-                #     self.write_log_event("Something went wrong!")
-                #     self.write_log_event(f"Type of the exception: {type(e)}") 
-                #     self.write_log_event(f"This error occurred: {e}")
-                #     link_skymap = f"https://ligo.gravity.cf.ac.uk/~chris.north/gwcat-data/data/png/{self.event_tab3}_moll_pretty.png"
-                #     #link_skymap = f"https://gracedb.ligo.org/events/{gracedb_id}/files/LALInference_skymap.png"
-                #     skymap_file = f"{self.event_tab3}_skymap.png"
-
-
-
-                #-------------------------                
-                # PI trial: replace 'urllib' with 'requests' library
-                # re-write the above 'try-except' code block as an 'if-else' block, as no Errors are raised using the 'requests' library
                 
-                # I need to check which skymaps are available on gracedb
+                # We need to check which skymaps are available on gracedb
                 list_available_png = []
 
 
                 # get url with 'requests'
                 response = requests.get(f"https://gracedb.ligo.org/api/superevents/{gracedb_id}/files/?format=json")
-                print('response status:', response.status_code)
+                # print('response status:', response.status_code) # for checking purposes: 200 means OK 
                 data = response.json()
-                print(data)
+                # print(data) # for checking purposes
                 for key in data:
                     if 'png' in key and 'volume' not in key:
                         list_available_png.append(key)
-
-                # print(list_available_png)
-                print('list of available png:', list_available_png)
+                # print('list of available png:', list_available_png) # for checking purposes
 
 
                 # If the list of available PNG files is empty, it means that no skymap is present on GraceDB. 
@@ -1761,40 +1717,32 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 if not list_available_png:
                     self.write_log_event("No PNG files available from GraceDB. Getting skymap from the gwcat database...")
                     link_skymap = f"https://ligo.gravity.cf.ac.uk/~chris.north/gwcat-data/data/png/{self.event_tab3}_moll_pretty.png"
-                    #link_skymap = f"https://gracedb.ligo.org/events/{gracedb_id}/files/LALInference_skymap.png"
                     skymap_file = f"{self.event_tab3}_skymap.png"
 
                 else:
                     for png in list_available_png:
                         if 'PublicationSamples' in png:
-                            # link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{self.event_tab3}_PublicationSamples.png"
-                            # skymap_file = f"{self.event_tab3}_PublicationSamples.png"
                             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"
                             skymap_file = f"{png}"
                             break
                         elif 'LALInference' in png:
-                            # link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/LALInference.png"
-                            # skymap_file = f"{self.event_tab3}_LALInference_skymap.png"
                             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"
                             skymap_file = f"{png}"
                             break
                         elif 'bayestar' in png:
-                            # link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/bayestar.png"
-                            # skymap_file = f"{self.event_tab3}_bayestar_skymap.png"
                             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"
                             skymap_file = f"{png}"
                             break
                         else:
                             link_skymap = f"https://gracedb.ligo.org/apiweb/superevents/{gracedb_id}/files/{png}"    
-                            # skymap_file = f"{self.event_tab3}_skymap.png"
                             skymap_file = f"{png}"
                     found_gracedb = True
-                #-------------------------     
 
 
                 print('link_skymap',link_skymap)
                 print('found_gracedb',found_gracedb)
             
+
                 warn_text = f"You will now choose the directory where to save the {skymap_file}. The file will be displayed after you save it."
                 warn_details = f"You can also retrieve the same file at the url {link_skymap}"
                 if(not found_gracedb):
@@ -1815,18 +1763,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     if not filename:  # If the user cancels the dialog, return without saving
                         return
                     break
-                
-                print("filename",filename)               
+                # print("filename",filename)     # for checking purposes         
                 
 
-                #-------------------------
-                #PI trial: replace urllib with requests
-                # urllib.request.urlretrieve(link_skymap, filename)
+                # Download the skymap file
                 response_skymap_file = requests.get(link_skymap)
                 with open(filename, 'wb') as file:
                     file.write(response_skymap_file.content)
 
-                #-------------------------        
     
 
                 dialog = QtWidgets.QDialog()
