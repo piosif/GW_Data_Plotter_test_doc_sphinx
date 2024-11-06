@@ -1377,7 +1377,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         do_whiten,do_freq_sel,fmin,fmax,do_zoom,tmin,tmax, label_w, bp_label = self.check_common_plot_options()
         if (self.GPS_end - self.GPS_start)<2 and do_whiten:
             warn_text = f"At least 2 seconds of data are required to whiten them."
-            warn_details = f"You use the previous tab to download a segment of data long at least 2 seconds or disable the whiten option in the Plot settings."
+            warn_details = f"Use the previous tab to download a segment of data at least 2 seconds long or disable the whiten option in the Plot settings."
             self.showdialogWarning(warn_text, warn_details)
         else:
             try:    
@@ -1528,7 +1528,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 #            else:
 #                self.window3.show()
           except Exception as e:
-            self.write_log_plot("- An arror occurred, have you got the data before plotting?\n(go to the preious tab and select a GPS interval or an event or a glitch example)\n")
+            self.write_log_plot("- An arror occurred, have you got the data before plotting?\n(go to the previous tab and select a GPS interval or an event or a glitch example)\n")
             self.write_log_plot("This error occurred: "+str(e))
             #for debugging purposes, remove later
 
@@ -1945,7 +1945,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     ax.axvline(x=x, color='tab:orange', label=self.event_tab3)
                 except KeyError:
                     text = f"The value of {key} will not be highlighted on the plot for the selected event"
-                    details = "Use the button 'Get/Print event parameters' to get the value of the parameters for the event and then plot the histogram again"
+                    details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again"
                     self.showdialogWarning(text, details)
 #                except AttributeError or TypeError:
                 except TypeError:
@@ -2003,7 +2003,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         self.showdialogWarning(text, details)    
                 except KeyError:
                     text = f"The values of {key1} and {key2} will not be highlighted on the plot for the selected event"
-                    details = "Use the button 'Get/Print event parameters' to get the value of the parameters for the event and then plot the histogram again"
+                    details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again"
                     self.showdialogWarning(text, details)
 
             ax.legend()
