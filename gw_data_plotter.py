@@ -1263,7 +1263,72 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def thread_complete(self):
         #this needs to be improved or eliminated
         print("THREAD COMPLETE!")
-        
+ 
+############################
+# PI: direct a specific code block to be implemented only AFTER the data has been downloaded
+    def catalogs_download_finished(self):
+            #this needs to be improved or eliminated
+            print("Download complete!")
+            self.plot_hist_after_download()
+
+
+############################
+# PI: This is a specific code block that must run only AFTER the catalogs data has been downloaded
+    def plot_hist_after_download(self):
+
+            key = self.comboBox_5.currentText()
+
+            db_name = self.event_parameters[key]['db_name']
+            param = []
+            
+            for c in self.catalogs:
+                for e in c['events']:
+                    value = c['events'][e][db_name]
+                    if value: #this is to remove Nones
+                        param.append(value)
+                
+
+            fig = Figure()
+            ax = fig.add_subplot()        
+            
+            if self.checkBox_3.isChecked():
+                self.write_log_event("\nFor the histogram, selecting the 'Log x scale' will actually allow you to plot the log10 of the parameter")
+                ax.hist(np.log10(param), label='all events', bins=20)
+                ax.set_xlabel(f"log$_{{10}}$ {key} [log$_{{10}}$ {self.event_parameters[key]['unit']}]")
+            else:
+                ax.hist(param, label='all events', bins=20)
+                ax.set_xlabel(key+" ["+self.event_parameters[key]['unit']+"]")
+            ax.set_ylabel('Counts')
+
+
+            if self.checkBox_4.isChecked():
+                ax.set_yscale('log')
+
+            if self.checkBox_2.isChecked():
+                try:
+                    x=self.event_parameters[key]['value']
+                    if self.checkBox_3.isChecked(): #replace with the log10 also in this case
+                        x = np.log10(x)
+                    ax.axvline(x=x, color='tab:orange', label=self.event_tab3)
+                except KeyError:
+                    text = f"The value of {key} will not be highlighted on the plot for the selected event"
+                    details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again"
+                    self.showdialogWarning(text, details)
+        #                except AttributeError or TypeError:
+                except TypeError:
+                    text = f"The value of {key} will not be highlighted on the plot for the selected event"
+                    details = f"The parameter {key} for {self.event_tab3} is not defined"
+                    self.showdialogWarning(text, details)
+                
+            ax.legend()
+
+            
+            # PI: Create plot window identifier (used to update the plotting windows or avoid duplicates) 
+            window_id = 'histogram_plot'
+
+            # Update the plot_window with the new figure (or create it if it does not exist)
+            self.update_plot_window(fig, window_id)
+
 
 ############################
 
@@ -1805,7 +1870,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.write_log_event("\nDownloanding parameters for all confident detections published by the LIGO-Virgo-KAGRA collaborations...\n")
         worker = Worker(self.download_catalogs)
         worker.signals.result.connect(self.print_output_tab3)
-        worker.signals.finished.connect(self.thread_complete)
+        # worker.signals.finished.connect(self.thread_complete) 
+        worker.signals.finished.connect(self.catalogs_download_finished)
         worker.signals.progress.connect(self.progress_fn)
         # Execute
         self.threadpool.start(worker)
@@ -1848,62 +1914,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 ############################
+
     def plot_parameter_histogram(self):
         
         key = self.comboBox_5.currentText()
         if (key == "None"):
             self.write_log_event("Select a parameter for the histogram")
         elif (self.catalogs is None):
-            self.write_log_event("Push the 'Get parameters for all events' button before plotting")
+            #-------------------------
+            # PI: download catalogs if there not there already (to make pushing the "Get parameters for all events" button unnecessary)
+            self.get_catalogs()
+            #-------------------------
         else:
-            db_name = self.event_parameters[key]['db_name']
-            param = []
-            
-            for c in self.catalogs:
-                for e in c['events']:
-                    value = c['events'][e][db_name]
-                    if value: #this is to remove Nones
-                        param.append(value)
-                
-            fig = Figure()
-            ax = fig.add_subplot()        
-            
-            if self.checkBox_3.isChecked():
-                self.write_log_event("\nFor the histogram, selecting the 'Log x scale' will actually allow you to plot the log10 of the parameter")
-                ax.hist(np.log10(param), label='all events', bins=20)
-                ax.set_xlabel(f"log$_{{10}}$ {key} [log$_{{10}}$ {self.event_parameters[key]['unit']}]")
-            else:
-                ax.hist(param, label='all events', bins=20)
-                ax.set_xlabel(key+" ["+self.event_parameters[key]['unit']+"]")
-            ax.set_ylabel('Counts')
-
-
-            if self.checkBox_4.isChecked():
-                ax.set_yscale('log')
-
-            if self.checkBox_2.isChecked():
-                try:
-                    x=self.event_parameters[key]['value']
-                    if self.checkBox_3.isChecked(): #replace with the log10 also in this case
-                        x = np.log10(x)
-                    ax.axvline(x=x, color='tab:orange', label=self.event_tab3)
-                except KeyError:
-                    text = f"The value of {key} will not be highlighted on the plot for the selected event"
-                    details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again"
-                    self.showdialogWarning(text, details)
-#                except AttributeError or TypeError:
-                except TypeError:
-                    text = f"The value of {key} will not be highlighted on the plot for the selected event"
-                    details = f"The parameter {key} for {self.event_tab3} is not defined"
-                    self.showdialogWarning(text, details)
-            ax.legend()
-
-            
-            # PI: Create plot window identifier (used to update the plotting windows or avoid duplicates) 
-            window_id = 'histogram_plot'
-
-            # Update the plot_window with the new figure (or create it if it does not exist)
-            self.update_plot_window(fig, window_id)
+            #PI: e.g the catalogs are downloaded already but we want to plot some other parameter
+            self.plot_hist_after_download()
 
 
 ############################
