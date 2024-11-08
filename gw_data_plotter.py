@@ -178,6 +178,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Dictionaries to track open windows
         self.open_help_windows = {} #help windows
         # self.plot_windows = {}  # plotting windows
+
+
+        # PI: state variable to track user actions in Tab 3
+        # It is used to distinguish whether the user clicked on "Plot histogram" or "2D scatter plot"
+        self.user_action_tab3 = None  
     
 
         #addition of other options for glitches
@@ -221,7 +226,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_9.clicked.connect(self.print_event_params)
         self.pushButton_10.clicked.connect(self.plot_parameter_histogram)
         self.pushButton_11.clicked.connect(self.plot_parameter_scatter)
+
+
+        # PI: We want to remove this button and implement its functionality in the "Plot histogram" and "2D scatter plot" buttons
         self.pushButton_12.clicked.connect(self.get_catalogs)
+        
+
         self.pushButton_13.clicked.connect(self.display_skymap)        
                 
         self.horizontalSlider.valueChanged.connect(self.set_label_min_t) #this is to decide what happens when the value of the slider changes
@@ -1267,12 +1277,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 # PI: instruct a specific code block to be executed only AFTER the data has been downloaded
 
     def catalogs_download_finished(self):
-            #this needs to be improved or eliminated
+            
             print("Download complete!")
 
-            # PI: a check has to be added here so that if the user has clicked on "Plot histogram" the plot_hist_after_download() method is executed
-            # and if the user has clicked on "2D scatter plot" the plot_2D_scatter_after_download() method is executed.
-            self.plot_hist_after_download()
+            # PI: depending on what the user wants to do, execute the corresponding code block
+            if self.user_action_tab3 == "plot_histogram":
+                self.plot_hist_after_download()
+            elif self.user_action_tab3 == "2D_scatter_plot":
+                self.plot_2D_scatter_after_download()
 
 
 ############################
@@ -1987,14 +1999,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def plot_parameter_histogram(self):
         
+        self.user_action_tab3 = "plot_histogram"
         key = self.comboBox_5.currentText()
+
         if (key == "None"):
             self.write_log_event("Select a parameter for the histogram")
         elif (self.catalogs is None):
-            #-------------------------
             # PI: download catalogs if they are not there already
             self.get_catalogs()
-            #-------------------------
         else:
             # PI: e.g if the catalogs are downloaded already but we want to plot some other parameter
             self.plot_hist_after_download()
@@ -2004,23 +2016,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def plot_parameter_scatter(self):
         
+        self.user_action_tab3 = "2D_scatter_plot"
         key1 = self.comboBox_5.currentText()
         key2 = self.comboBox_6.currentText()
+
         if (key1 == "None" or key2 == "None"):
             self.write_log_event("\nSelect two parameters for the scatter plot")
         elif (self.catalogs is None):
-
-            # PI: Here I hav to get the catalogs..BUT when the download finishes I have to plot the scatter plot
-            # not the histogram that is currrently connected to the download finish
-            # So get_catalogs should distinguidh between the two cases after the download is complete
-            # self.get_catalogs()
-
-            self.write_log_event("\nPush the button to get parameters for all events before plotting")
-        else:
-
-            # PI the rest of this "else" clause will go into a separate method that will be called after the catalogs are downloaded
-            # I have to amend the get_catalogs method to distinguish between the two cases (histogram or scatter plot)    
-
+            # PI: download catalogs if they are not there already
+            self.get_catalogs()
+        else:  
+            # PI: e.g if the catalogs are downloaded already but we want to plot some other pair of parameters
             self.plot_2D_scatter_after_download()
 
 
