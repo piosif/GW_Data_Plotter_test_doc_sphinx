@@ -1867,7 +1867,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 ############################
 
     def get_catalogs(self):
-        self.write_log_event("\nDownloanding parameters for all confident detections published by the LIGO-Virgo-KAGRA collaborations...\n")
+        self.write_log_event("\nDownloading parameters for all confident detections published by the LIGO-Virgo-KAGRA collaborations...\n")
         worker = Worker(self.download_catalogs)
         worker.signals.result.connect(self.print_output_tab3)
         # worker.signals.finished.connect(self.thread_complete) 
