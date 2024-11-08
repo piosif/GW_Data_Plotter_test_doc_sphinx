@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'tabs_3col_font_layout_fixed.ui'
+# Form implementation generated from reading ui file 'layout.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.1
 #
@@ -918,7 +918,7 @@ class Ui_MainWindow(object):
         self.label_8.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">To convert UTC to GPS format visit the link: </span><a href=\"https://gwosc.org/gps/\"><span style=\" text-decoration: underline; color:#005493;\">https://gwosc.org/gps/</span></a></p></body></html>"))
         self.label_2.setText(_translate("MainWindow", "Starting time (GPS)"))
         self.label_3.setText(_translate("MainWindow", "Ending time (GPS)"))
-        self.pushButton.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\"font-size:15px;\">Download the data and save them in a local variable for later plotting (no file will be saved in your PC yet).</span></p></body></html>"))
+        self.pushButton.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Download the data and save them in memory for later plotting (no file will be saved in your PC yet).</span></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Download data"))
         self.label_12.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select a known GW event</span></p></body></html>"))
         self.label_17.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select from the list</span></p></body></html>"))
@@ -976,9 +976,11 @@ class Ui_MainWindow(object):
         self.pushButton_12.setText(_translate("MainWindow", "Get parameters for all events"))
         self.label_42.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select a parameter from the list to plot an histogram</span></p></body></html>"))
         self.comboBox_5.setItemText(0, _translate("MainWindow", "None"))
+        self.pushButton_10.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Plot a histogram of the selected parameter for all events.</span></p></body></html>"))
         self.pushButton_10.setText(_translate("MainWindow", "Plot histogram"))
         self.label_43.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select another parameter from the list to plot a 2D scatter plot</span></p></body></html>"))
         self.comboBox_6.setItemText(0, _translate("MainWindow", "None"))
+        self.pushButton_11.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Create a scatter plot of the selected parameters for all events.</span></p></body></html>"))
         self.pushButton_11.setText(_translate("MainWindow", "2D scatter plot"))
         self.checkBox_4.setText(_translate("MainWindow", "Log y-axis"))
         self.checkBox_3.setText(_translate("MainWindow", "Log x-axis"))

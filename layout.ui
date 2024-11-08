@@ -90,7 +90,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="resources/app_resources.qrc">:/img/logo_AHEAD2020_piccolo.png</pixmap>
+         <pixmap>:/img/logo_AHEAD2020_piccolo.png</pixmap>
         </property>
        </widget>
       </item>
@@ -443,7 +443,7 @@
                  </font>
                 </property>
                 <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size:15px;&quot;&gt;Download the data and save them in a local variable for later plotting (no file will be saved in your PC yet).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:15px;&quot;&gt;Download the data and save them in memory for later plotting (no file will be saved in your PC yet).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">color:rgb(0, 84, 147);</string>
@@ -2284,6 +2284,9 @@
                   <pointsize>13</pointsize>
                  </font>
                 </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:15px;&quot;&gt;Plot a histogram of the selected parameter for all events.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">color: rgb(0, 84, 147);</string>
                 </property>
@@ -2379,6 +2382,9 @@
                   <family>Montserrat</family>
                   <pointsize>13</pointsize>
                  </font>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:15px;&quot;&gt;Create a scatter plot of the selected parameters for all events.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">color: rgb(0, 84, 147);</string>
@@ -2533,9 +2539,7 @@
   <tabstop>textBrowser</tabstop>
   <tabstop>tabWidget</tabstop>
  </tabstops>
- <resources>
-  <include location="resources/app_resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>checkBox_8</sender>

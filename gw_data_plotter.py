@@ -229,7 +229,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
         # PI: We want to remove this button and implement its functionality in the "Plot histogram" and "2D scatter plot" buttons
-        self.pushButton_12.clicked.connect(self.get_catalogs)
+        # self.pushButton_12.clicked.connect(self.get_catalogs)
         
 
         self.pushButton_13.clicked.connect(self.display_skymap)        
