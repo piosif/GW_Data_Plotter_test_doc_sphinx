@@ -4,9 +4,6 @@ import sys
 import json
 import traceback
 import re
-
-# PI trial: replace urllib with requests
-import urllib.request
 import requests
 
 import numpy as np
@@ -23,7 +20,6 @@ from gwosc.api import fetch_event_json, fetch_json
 
 from layout import Ui_MainWindow
 
-
 import app_resources #PI: use a resources file (.qrc) to include images and fonts
 
 from PyQt6 import QtGui
@@ -37,8 +33,10 @@ from PyQt6.QtGui import QTextCursor, QFontDatabase, QFont
 
 basedir = os.path.dirname(__file__) 
 
+
 #environment variable to set auto screen scale factor
 os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
+
 
 # Handle high resolution displays:
 if hasattr(Qt, 'AA_EnableHighDpiScaling'):
@@ -56,9 +54,9 @@ def my_consecutive_bools(ar):
     return np.logical_and(arange >= indices[::2, None],
                           arange < indices[1::2, None])
 
+
 #----------------------------------------------------
 #the following 3 classes are needed for the multithread
-
 
 
 class WorkerSignals(QObject):
@@ -84,6 +82,7 @@ class WorkerSignals(QObject):
     error = pyqtSignal(tuple)
     result = pyqtSignal(object)
     progress = pyqtSignal(int)
+
 
 
 class Worker(QRunnable):
@@ -129,15 +128,6 @@ class Worker(QRunnable):
             self.signals.result.emit(result)  # Return the result of the processing
         finally:
             self.signals.finished.emit()  # Done
-
-
-
-
-
-
-
-
-
 
 
 
@@ -466,6 +456,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 ############################
 # PI: Show help for the current tab in a new window
+
     def show_help(self):
         
         # Get the current tab
@@ -492,10 +483,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 ############################
 # PI:  Help window contents
-#
 # This method sets different help content for each tab
 # The help contents could be also saved in a separate file and read from there
-#
+
     def help_content(self):
         # Determine which tab is active and get the corresponding help text
         current_tab = self.get_current_tab()  # get the current tab
@@ -576,11 +566,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             """ 
 
 
-    ############################
-    # PI:  Get current tab index
-    #
-    # This method is then used to show the help content for the current tab
-    #
+############################
+# PI:  Get current tab index
+# This method is then used to show the help content for the current tab
+
     def get_current_tab(self):
             # Get the current tab index from the tabwidget and map it to a name
             current_index = self.tabWidget.currentIndex()
@@ -598,6 +587,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 ############################
 #PI: Draw the plot window 
+
     def create_plot_window(self, fig, *args):   
         plot_window = AnotherWindow(fig, self)
         plot_window.show()
@@ -605,7 +595,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     
 
 ############################
-#PI: Method to update plot window content or create it if it does not exist
+# PI: Method to update plot window content or create it if it does not exist
+
     def update_plot_window(self, fig, window_id):
         if hasattr(self, window_id) and getattr(self, window_id) is not None and getattr(self, window_id).isVisible():
             # Update the existing window
@@ -616,17 +607,21 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 ############################
+
     def set_label_min_t(self):
         #since the slider can accept only integers steps I will use a factor 100 to have decimal values
         new_value = str(self.horizontalSlider.value()/self.decimals)
         self.label_24.setText(new_value)
 
+
 ############################
+
     def set_label_max_t(self):
         #since the slider can accept only integers steps I will use a factor 100 to have decimal values
         new_value = str(self.horizontalSlider_2.value()/self.decimals)
         self.label_29.setText(new_value)
         
+
 ############################
 
     def download_data(self):
@@ -839,8 +834,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 
 
 ############################
-
 #Agata: define method to change both the sliders max and min for the zoom but also the steps
+
     def modify_zoom_sliders(self):
         #if duration is too long change the step of the slider
         if self.duration>10:
@@ -852,8 +847,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.horizontalSlider.setMinimum(round(-(self.duration)*(self.decimals/2)))
         self.horizontalSlider_2.setMaximum(round(self.duration*(self.decimals/2)))
 
-############################
 
+############################
 # PI: method to save the downloaded GW data to a file
 
     def save_data(self):
@@ -936,8 +931,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         except Exception as e:
             self.write_log(f"Error saving data: {str(e)}")
 
-############################
 
+############################
     def check_GPS(self, label):
         '''
         This method is used to check if the GPS times given by the user are reasonable
@@ -971,8 +966,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             error_code = f"Fill the GPS {label}"
         return GPS_out, error_code
 
-############################
 
+############################
 # PI: method to load GW data from a file
 
     def load_data(self):
@@ -1135,10 +1130,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         except Exception as e:
             self.write_log(f"Error loading data: {str(e)}")
 
-
         
 ############################
-
 # PI: method to set the detector label based on the detector name
 
     def set_detector_label(self):
@@ -1152,8 +1145,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif self.det == "K1":
             self.det_label = "KAGRA"
 
-############################
 
+############################
 # PI: method to set needed options for plotting when loading data
 
     def set_options_loaded_data(self):
@@ -1180,8 +1173,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.glitch = None
             print(self.glitch)
 
-############################
 
+############################
 #AT: for the moment I implemented this method to check for Nans but other alternatives are possible
 
     def check_for_nans(self):
@@ -1198,8 +1191,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.checkBox_7.setChecked(True)            
             #remove the zoom in time
             self.checkBox.setChecked(False)
-            
-            
+                       
     
             #we could add specify which are the intervals of "good data" in the file
             text_to_be_print +=f"The segments of available data in the file are in the GPS intervals:\n"
@@ -1209,6 +1201,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 time_no_nans = time_array[no_nans]
                 text_to_be_print +=f"[{time_no_nans[0]},{time_no_nans[-1]+self.data.dt.value})\n"
             self.write_log(text_to_be_print)    
+
 
 ############################
 
@@ -1224,13 +1217,16 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         textB.insertPlainText(text+'\n')
 #        self.textBrowser.insertHtml('<b>'+text+'<\b>')
 
+
 ############################
 
     def write_log_plot(self, text):
         #this method just writes into the logger of the second tab
         self.write_log(text,self.textBrowser_2)
 
+
 ############################
+
     def check_if_text_is_already_there(self, text):
         is_there = False
         previous_text = self.textBrowser_2.toPlainText()
@@ -1238,13 +1234,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             is_there = True
         return is_there    
 
+
 ############################
 
     def write_log_event(self, text):
         #this method just writes into the logger of the second tab
         self.write_log(text,self.textBrowser_3)
         
- 
                 
 ############################
 
@@ -1252,11 +1248,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         #this needs to be improved or eliminated
         print("%d%% done" % n)
 
+
 ############################
 
     def print_output(self, s):
         print(s)
         self.write_log(s)
+
 
 ############################
 
@@ -1264,16 +1262,23 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         #this needs to be improved or eliminated
         print("THREAD COMPLETE!")
  
+
 ############################
-# PI: direct a specific code block to be implemented only AFTER the data has been downloaded
+# PI: instruct a specific code block to be executed only AFTER the data has been downloaded
+
     def catalogs_download_finished(self):
             #this needs to be improved or eliminated
             print("Download complete!")
+
+            # PI: a check has to be added here so that if the user has clicked on "Plot histogram" the plot_hist_after_download() method is executed
+            # and if the user has clicked on "2D scatter plot" the plot_2D_scatter_after_download() method is executed.
             self.plot_hist_after_download()
 
 
 ############################
-# PI: This is a specific code block that must run only AFTER the catalogs data has been downloaded
+# PI: This code block plots the histogram of a specified parameter for all GW events.
+# It must run only AFTER the catalogs data has been downloaded.
+
     def plot_hist_after_download(self):
 
             key = self.comboBox_5.currentText()
@@ -1314,7 +1319,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     text = f"The value of {key} will not be highlighted on the plot for the selected event"
                     details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again"
                     self.showdialogWarning(text, details)
-        #                except AttributeError or TypeError:
+                    # except AttributeError or TypeError:
                 except TypeError:
                     text = f"The value of {key} will not be highlighted on the plot for the selected event"
                     details = f"The parameter {key} for {self.event_tab3} is not defined"
@@ -1328,6 +1333,58 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
             # Update the plot_window with the new figure (or create it if it does not exist)
             self.update_plot_window(fig, window_id)
+
+
+###########################
+# PI: This code block plots a 2D scatter plot of the specified parameters for all GW events.
+# It must run only AFTER the catalogs data has been downloaded.
+
+    def plot_2D_scatter_after_download(self):
+
+        key1 = self.comboBox_5.currentText()
+        key2 = self.comboBox_6.currentText()
+
+        db_name1 = self.event_parameters[key1]['db_name']
+        db_name2 = self.event_parameters[key2]['db_name']
+        param1 = []
+        param2 = []
+        
+        for c in self.catalogs:
+            for e in c['events']:
+                param1.append(c['events'][e][db_name1])
+                param2.append(c['events'][e][db_name2])
+            
+        fig = Figure()
+        ax = fig.add_subplot()        
+        
+        ax.scatter(param1, param2, label='all events', alpha=0.8)                  
+        ax.set_xlabel(key1+" ["+self.event_parameters[key1]['unit']+"]")
+        ax.set_ylabel(key2+" ["+self.event_parameters[key2]['unit']+"]")
+        if self.checkBox_3.isChecked():
+            ax.set_xscale('log')
+        if self.checkBox_4.isChecked():
+            ax.set_yscale('log')
+        if self.checkBox_2.isChecked():
+            #check that the values for the parameters are numbers for the selected event 
+            try:
+                if (self.event_parameters[key1]['value'] and self.event_parameters[key2]['value']):
+                    ax.scatter(self.event_parameters[key1]['value'], self.event_parameters[key2]['value'], edgecolors='tab:orange', facecolor="none", label=self.event_tab3)
+                else:
+                    text = f"The values of {key1} and {key2} will not be highlighted on the plot for the selected event"
+                    details = f"One among the parameters {key1} and {key2} for {self.event_tab3} is not defined"
+                    self.showdialogWarning(text, details)    
+            except KeyError:
+                text = f"The values of {key1} and {key2} will not be highlighted on the plot for the selected event"
+                details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again"
+                self.showdialogWarning(text, details)
+
+        ax.legend()
+    
+        # PI: Create plot window identifier (used to update the plotting windows or avoid duplicates) 
+        window_id = 'scatter_plot'          
+
+        # Update the plot_window with the new figure (or create it if it does not exist)
+        self.update_plot_window(fig, window_id)
 
 
 ############################
@@ -1370,11 +1427,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         progress_callback.emit(100)
         return output+"\n- Done!\n"
 
+
 ############################
 
     def switch1 (self):
         #this method allows to change tab and go to the second tab
         self.tabWidget.setCurrentIndex(1)
+
 
 ############################
 
@@ -1382,7 +1441,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         #this method allows to change tab and go to the first tab
         self.tabWidget.setCurrentIndex(0)
 
+
 ############################
+
     def check_common_plot_options(self):
         #this is to check the plotting option common to the strain and Q scan
         label_w = "raw"
@@ -1406,6 +1467,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 ############################
+
     def tips_for_plotting(self,gdict, name):
         text_to_be_printed = "-----------------------------\n"
         text_to_be_printed += f"Tips for plotting this {name} (default values):\n"
@@ -1422,9 +1484,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if not is_there:
             self.write_log_plot(text_to_be_printed)        
             
-
         
 ############################
+
     def plot_strain(self):
         #if the data have not been downloaded show a warning
         if self.data is None:
@@ -1510,6 +1572,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             except Exception as e:
                 self.write_log_plot("- An arror occurred, have you got the data before plotting?\n(go to the preious tab and select a GPS interval or an event or a glitch example)\n")
                 self.write_log_plot("This error occurred: "+str(e))#for debugging purposes, remove later
+
 
 ############################
 
@@ -1617,7 +1680,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 #    def msgbtn(i):
 #        print ("Button pressed is:",i.text())
 
+
 ############################
+
     def showdialogWarning(self, text="Additional information", details = "Details", response=False):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Icon.Warning)
@@ -1656,7 +1721,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         response = warning_msg_box.exec()
         return response
 
+
 ############################
+
     def verify_correct_event_name(self, dropdown, textbox):
         #default value is 0 if the next conditions are not satisfied
         event_name = 0
@@ -1683,7 +1750,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.showdialogWarning(textw, detailsw)
         return event_name
 
+
 ############################
+
     def print_event_params(self):
 
         event = self.verify_correct_event_name(self.comboBox_4.currentText(), self.EventNameTab3.text())
@@ -1881,6 +1950,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
 
 ############################
+
     def download_catalogs(self, progress_callback):
         output = "Catalogs downloaded:\n"
         catalog_list_names = ['GWTC-1-confident','GWTC-2.1-confident', 'GWTC-3-confident']
@@ -1922,15 +1992,16 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.write_log_event("Select a parameter for the histogram")
         elif (self.catalogs is None):
             #-------------------------
-            # PI: download catalogs if there not there already (to make pushing the "Get parameters for all events" button unnecessary)
+            # PI: download catalogs if they are not there already
             self.get_catalogs()
             #-------------------------
         else:
-            #PI: e.g the catalogs are downloaded already but we want to plot some other parameter
+            # PI: e.g if the catalogs are downloaded already but we want to plot some other parameter
             self.plot_hist_after_download()
 
 
 ############################
+
     def plot_parameter_scatter(self):
         
         key1 = self.comboBox_5.currentText()
@@ -1938,50 +2009,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if (key1 == "None" or key2 == "None"):
             self.write_log_event("\nSelect two parameters for the scatter plot")
         elif (self.catalogs is None):
+
+            # PI: Here I hav to get the catalogs..BUT when the download finishes I have to plot the scatter plot
+            # not the histogram that is currrently connected to the download finish
+            # So get_catalogs should distinguidh between the two cases after the download is complete
+            # self.get_catalogs()
+
             self.write_log_event("\nPush the button to get parameters for all events before plotting")
         else:
-            db_name1 = self.event_parameters[key1]['db_name']
-            db_name2 = self.event_parameters[key2]['db_name']
-            param1 = []
-            param2 = []
-            
-            for c in self.catalogs:
-                for e in c['events']:
-                    param1.append(c['events'][e][db_name1])
-                    param2.append(c['events'][e][db_name2])
-                
-            fig = Figure()
-            ax = fig.add_subplot()        
-            
-            ax.scatter(param1, param2, label='all events', alpha=0.8)                  
-            ax.set_xlabel(key1+" ["+self.event_parameters[key1]['unit']+"]")
-            ax.set_ylabel(key2+" ["+self.event_parameters[key2]['unit']+"]")
-            if self.checkBox_3.isChecked():
-                ax.set_xscale('log')
-            if self.checkBox_4.isChecked():
-                ax.set_yscale('log')
-            if self.checkBox_2.isChecked():
-                #check that the values for the parameters are numbers for the selected event 
-                try:
-                    if (self.event_parameters[key1]['value'] and self.event_parameters[key2]['value']):
-                        ax.scatter(self.event_parameters[key1]['value'], self.event_parameters[key2]['value'], edgecolors='tab:orange', facecolor="none", label=self.event_tab3)
-                    else:
-                        text = f"The values of {key1} and {key2} will not be highlighted on the plot for the selected event"
-                        details = f"One among the parameters {key1} and {key2} for {self.event_tab3} is not defined"
-                        self.showdialogWarning(text, details)    
-                except KeyError:
-                    text = f"The values of {key1} and {key2} will not be highlighted on the plot for the selected event"
-                    details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again"
-                    self.showdialogWarning(text, details)
 
-            ax.legend()
-        
-            # PI: Create plot window identifier (used to update the plotting windows or avoid duplicates) 
-            window_id = 'scatter_plot'          
+            # PI the rest of this "else" clause will go into a separate method that will be called after the catalogs are downloaded
+            # I have to amend the get_catalogs method to distinguish between the two cases (histogram or scatter plot)    
 
-            # Update the plot_window with the new figure (or create it if it does not exist)
-            self.update_plot_window(fig, window_id)
-
+            self.plot_2D_scatter_after_download()
 
 
 
