@@ -181,6 +181,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(5, -1, 5, -1)
         self.verticalLayout_2.setSpacing(5)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.checkBox_knownGW = QtWidgets.QCheckBox(parent=self.tab)
+        self.checkBox_knownGW.setObjectName("checkBox_knownGW")
+        self.verticalLayout_2.addWidget(self.checkBox_knownGW)
         self.label_12 = QtWidgets.QLabel(parent=self.tab)
         font = QtGui.QFont()
         font.setFamily("Montserrat")
@@ -279,6 +282,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addLayout(self.gridLayout)
         spacerItem17 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_2.addItem(spacerItem17)
+        self.checkBox_knownGlitch = QtWidgets.QCheckBox(parent=self.tab)
+        self.checkBox_knownGlitch.setObjectName("checkBox_knownGlitch")
+        self.verticalLayout_2.addWidget(self.checkBox_knownGlitch)
         self.label_13 = QtWidgets.QLabel(parent=self.tab)
         self.label_13.setMinimumSize(QtCore.QSize(300, 0))
         font = QtGui.QFont()
@@ -879,6 +885,31 @@ class Ui_MainWindow(object):
         self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_12.setDisabled) # type: ignore
         self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.comboBox_2.setDisabled) # type: ignore
         self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.EventNameTab3_2.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_15.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_16.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.doubleSpinBox.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.doubleSpinBox_2.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_14.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_17.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_18.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.comboBox_3.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.GPSstart.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_13.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.GPSend.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.label_2.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.label_3.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.comboBox_3.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.label_8.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.GPSstart.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.GPSend.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_2.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_3.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.comboBox_2.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.EventNameTab3_2.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_15.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_16.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.doubleSpinBox.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.doubleSpinBox_2.setDisabled) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textBrowser, self.tabWidget)
 
@@ -900,6 +931,7 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Ending time (GPS)"))
         self.pushButton.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Download the data and save them in memory for later plotting (no file will be saved in your PC yet).</span></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Download data"))
+        self.checkBox_knownGW.setText(_translate("MainWindow", "CheckBox"))
         self.label_12.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select a known GW event</span></p></body></html>"))
         self.label_17.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select from the list</span></p></body></html>"))
         self.comboBox_2.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\"font-size: 15px;\">Note that when you select an event from this list the selection via time interval will not be possible.</span></p></body></html>"))
@@ -908,6 +940,7 @@ class Ui_MainWindow(object):
         self.label_14.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#005493;\">Select duration of data segment</span></p></body></html>"))
         self.label_16.setText(_translate("MainWindow", "After merger [s]"))
         self.label_15.setText(_translate("MainWindow", "Before merger [s]"))
+        self.checkBox_knownGlitch.setText(_translate("MainWindow", "CheckBox"))
         self.label_13.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select an example of a known glitch</span></p></body></html>"))
         self.comboBox_3.setItemText(0, _translate("MainWindow", "None"))
         self.comboBox_3.setItemText(1, _translate("MainWindow", "Blip"))
