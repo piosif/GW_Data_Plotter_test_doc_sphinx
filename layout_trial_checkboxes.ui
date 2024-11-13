@@ -127,7 +127,7 @@
            <number>0</number>
           </property>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+           <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0">
             <property name="spacing">
              <number>10</number>
             </property>
@@ -289,19 +289,6 @@
             </item>
             <item>
              <widget class="QCheckBox" name="checkBox_GW_TimeInterval">
-              <property name="text">
-               <string>CheckBox</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_35">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
               <property name="font">
                <font>
                 <family>Montserrat</family>
@@ -309,8 +296,11 @@
                 <bold>true</bold>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color: #005493</string>
+              </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005493;&quot;&gt;Select data by time interval&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>Select data by time interval</string>
               </property>
              </widget>
             </item>
@@ -478,7 +468,7 @@
            </layout>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0">
             <property name="spacing">
              <number>5</number>
             </property>
@@ -490,13 +480,6 @@
             </property>
             <item>
              <widget class="QCheckBox" name="checkBox_knownGW">
-              <property name="text">
-               <string>CheckBox</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_12">
               <property name="font">
                <font>
                 <family>Montserrat</family>
@@ -504,8 +487,11 @@
                 <bold>true</bold>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color: #005493</string>
+              </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005493;&quot;&gt;Select a known GW event&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>Select a known GW event</string>
               </property>
              </widget>
             </item>
@@ -806,19 +792,6 @@
             </item>
             <item>
              <widget class="QCheckBox" name="checkBox_knownGlitch">
-              <property name="text">
-               <string>CheckBox</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_13">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
               <property name="font">
                <font>
                 <family>Montserrat</family>
@@ -826,11 +799,11 @@
                 <bold>true</bold>
                </font>
               </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005493;&quot;&gt;Select an example of a known glitch&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <property name="styleSheet">
+               <string notr="true">color: #005493</string>
               </property>
-              <property name="wordWrap">
-               <bool>true</bool>
+              <property name="text">
+               <string>Select an example of a known glitch</string>
               </property>
              </widget>
             </item>
@@ -2680,22 +2653,6 @@
   <connection>
    <sender>checkBox_GW_TimeInterval</sender>
    <signal>toggled(bool)</signal>
-   <receiver>label_12</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>519</x>
-     <y>177</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_GW_TimeInterval</sender>
-   <signal>toggled(bool)</signal>
    <receiver>comboBox_2</receiver>
    <slot>setDisabled(bool)</slot>
    <hints>
@@ -2866,22 +2823,6 @@
     <hint type="destinationlabel">
      <x>110</x>
      <y>481</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_GW_TimeInterval</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>label_13</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>519</x>
-     <y>512</y>
     </hint>
    </hints>
   </connection>
