@@ -3125,5 +3125,101 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_knownGlitch</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_knownGW</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_GW_TimeInterval</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_knownGlitch</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_GW_TimeInterval</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_knownGW</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>

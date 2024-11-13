@@ -910,6 +910,12 @@ class Ui_MainWindow(object):
         self.checkBox_knownGlitch.toggled['bool'].connect(self.label_16.setDisabled) # type: ignore
         self.checkBox_knownGlitch.toggled['bool'].connect(self.doubleSpinBox.setDisabled) # type: ignore
         self.checkBox_knownGlitch.toggled['bool'].connect(self.doubleSpinBox_2.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.checkBox_knownGlitch.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.checkBox_knownGW.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.checkBox_GW_TimeInterval.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.checkBox_knownGlitch.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.checkBox_GW_TimeInterval.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.checkBox_knownGW.setDisabled) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textBrowser, self.tabWidget)
 
