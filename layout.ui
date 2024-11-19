@@ -1031,6 +1031,22 @@ QLabel:disabled {
               </property>
              </widget>
             </item>
+<<<<<<< HEAD
+=======
+            <item>
+             <widget class="QProgressBar" name="download_progressBar">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color:#005493;font-size:15px;&quot;&gt;Displays download progress.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+             </widget>
+            </item>
+>>>>>>> 36868e2 (tab1: empty irrelevant text boxes when other checkbox selected)
            </layout>
           </item>
          </layout>
@@ -3285,6 +3301,118 @@ QLabel:disabled {
     <hint type="destinationlabel">
      <x>175</x>
      <y>389</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>GPSstart</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>470</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>GPSend</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>549</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>GPSstart</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>470</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>GPSend</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>549</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>EventNameTab3_2</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>EventNameTab3_2</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboBox_2</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>466</x>
+     <y>246</y>
     </hint>
    </hints>
   </connection>
