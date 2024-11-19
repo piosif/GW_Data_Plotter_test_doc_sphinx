@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1040, 680)
+        MainWindow.resize(1067, 680)
         font = QtGui.QFont()
         font.setFamily("Montserrat")
         font.setPointSize(13)
@@ -115,16 +115,29 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addLayout(self.horizontalLayout_16)
         spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_3.addItem(spacerItem4)
-        self.label_35 = QtWidgets.QLabel(parent=self.tab)
-        self.label_35.setMinimumSize(QtCore.QSize(300, 0))
+        self.checkBox_GW_TimeInterval = QtWidgets.QCheckBox(parent=self.tab)
         font = QtGui.QFont()
         font.setFamily("Montserrat")
         font.setPointSize(14)
         font.setBold(True)
-        self.label_35.setFont(font)
-        self.label_35.setObjectName("label_35")
-        self.verticalLayout_3.addWidget(self.label_35)
+        self.checkBox_GW_TimeInterval.setFont(font)
+        self.checkBox_GW_TimeInterval.setStyleSheet("color: #005493")
+        self.checkBox_GW_TimeInterval.setObjectName("checkBox_GW_TimeInterval")
+        self.verticalLayout_3.addWidget(self.checkBox_GW_TimeInterval)
         self.label_8 = QtWidgets.QLabel(parent=self.tab)
+        font = QtGui.QFont()
+        font.setFamily("Montserrat")
+        font.setPointSize(13)
+        self.label_8.setFont(font)
+        self.label_8.setStyleSheet("QLabel {\n"
+"    color: #005493;  /* Blue color when enabled */\n"
+"}\n"
+"QLabel:disabled {\n"
+"    color: #A0A0A0;  /* Grey color when disabled */\n"
+"}\n"
+"QLabel:disabled a {\n"
+"    color: #A0A0A0;  /* Grey color for links when disabled */\n"
+"}")
         self.label_8.setWordWrap(True)
         self.label_8.setObjectName("label_8")
         self.verticalLayout_3.addWidget(self.label_8)
@@ -178,15 +191,26 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(5, -1, 5, -1)
         self.verticalLayout_2.setSpacing(5)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.label_12 = QtWidgets.QLabel(parent=self.tab)
+        self.checkBox_knownGW = QtWidgets.QCheckBox(parent=self.tab)
         font = QtGui.QFont()
         font.setFamily("Montserrat")
         font.setPointSize(14)
         font.setBold(True)
-        self.label_12.setFont(font)
-        self.label_12.setObjectName("label_12")
-        self.verticalLayout_2.addWidget(self.label_12)
+        self.checkBox_knownGW.setFont(font)
+        self.checkBox_knownGW.setStyleSheet("color: #005493")
+        self.checkBox_knownGW.setObjectName("checkBox_knownGW")
+        self.verticalLayout_2.addWidget(self.checkBox_knownGW)
         self.label_17 = QtWidgets.QLabel(parent=self.tab)
+        font = QtGui.QFont()
+        font.setFamily("Montserrat")
+        font.setPointSize(13)
+        self.label_17.setFont(font)
+        self.label_17.setStyleSheet("QLabel {\n"
+"    color: #005493;  /* Blue color when enabled */\n"
+"}\n"
+"QLabel:disabled {\n"
+"    color: #A0A0A0;  /* Grey color when disabled */\n"
+"}")
         self.label_17.setObjectName("label_17")
         self.verticalLayout_2.addWidget(self.label_17)
         self.horizontalLayout_20 = QtWidgets.QHBoxLayout()
@@ -205,6 +229,16 @@ class Ui_MainWindow(object):
         spacerItem10 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_2.addItem(spacerItem10)
         self.label_18 = QtWidgets.QLabel(parent=self.tab)
+        font = QtGui.QFont()
+        font.setFamily("Montserrat")
+        font.setPointSize(13)
+        self.label_18.setFont(font)
+        self.label_18.setStyleSheet("QLabel {\n"
+"    color: #005493;  /* Blue color when enabled */\n"
+"}\n"
+"QLabel:disabled {\n"
+"    color: #A0A0A0;  /* Grey color when disabled */\n"
+"}")
         self.label_18.setObjectName("label_18")
         self.verticalLayout_2.addWidget(self.label_18)
         self.horizontalLayout_21 = QtWidgets.QHBoxLayout()
@@ -224,6 +258,12 @@ class Ui_MainWindow(object):
         font.setFamily("Montserrat")
         font.setPointSize(13)
         self.label_14.setFont(font)
+        self.label_14.setStyleSheet("QLabel {\n"
+"    color: #005493;  /* Blue color when enabled */\n"
+"}\n"
+"QLabel:disabled {\n"
+"    color: #A0A0A0;  /* Grey color when disabled */\n"
+"}")
         self.label_14.setObjectName("label_14")
         self.verticalLayout_2.addWidget(self.label_14)
         self.gridLayout = QtWidgets.QGridLayout()
@@ -276,16 +316,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addLayout(self.gridLayout)
         spacerItem17 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_2.addItem(spacerItem17)
-        self.label_13 = QtWidgets.QLabel(parent=self.tab)
-        self.label_13.setMinimumSize(QtCore.QSize(300, 0))
+        self.checkBox_knownGlitch = QtWidgets.QCheckBox(parent=self.tab)
         font = QtGui.QFont()
         font.setFamily("Montserrat")
         font.setPointSize(14)
         font.setBold(True)
-        self.label_13.setFont(font)
-        self.label_13.setWordWrap(True)
-        self.label_13.setObjectName("label_13")
-        self.verticalLayout_2.addWidget(self.label_13)
+        self.checkBox_knownGlitch.setFont(font)
+        self.checkBox_knownGlitch.setStyleSheet("color: #005493")
+        self.checkBox_knownGlitch.setObjectName("checkBox_knownGlitch")
+        self.verticalLayout_2.addWidget(self.checkBox_knownGlitch)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setContentsMargins(5, 5, 5, 5)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
@@ -873,6 +912,42 @@ class Ui_MainWindow(object):
         self.checkBox_8.toggled['bool'].connect(self.spinBox_5.setEnabled) # type: ignore
         self.checkBox.toggled['bool'].connect(self.label_28.setEnabled) # type: ignore
         self.checkBox_7.toggled['bool'].connect(self.label_20.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.comboBox_2.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.EventNameTab3_2.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_15.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_16.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.doubleSpinBox.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.doubleSpinBox_2.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_14.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_17.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.label_18.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.comboBox_3.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.GPSstart.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.GPSend.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.label_2.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.label_3.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.comboBox_3.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.label_8.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.GPSstart.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.GPSend.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_2.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_3.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.comboBox_2.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.EventNameTab3_2.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_15.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_16.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.doubleSpinBox.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.doubleSpinBox_2.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.checkBox_knownGlitch.setDisabled) # type: ignore
+        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.checkBox_knownGW.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.checkBox_GW_TimeInterval.setDisabled) # type: ignore
+        self.checkBox_knownGW.toggled['bool'].connect(self.checkBox_knownGlitch.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.checkBox_GW_TimeInterval.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.checkBox_knownGW.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_14.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_17.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_18.setDisabled) # type: ignore
+        self.checkBox_knownGlitch.toggled['bool'].connect(self.label_8.setDisabled) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textBrowser, self.tabWidget)
 
@@ -887,21 +962,24 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(2, _translate("MainWindow", "LIGO-Livingston"))
         self.comboBox.setItemText(3, _translate("MainWindow", "Virgo"))
         self.comboBox.setItemText(4, _translate("MainWindow", "KAGRA"))
-        self.label_35.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select data by time interval</span></p></body></html>"))
-        self.label_8.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">To convert UTC to GPS format visit the link: </span><a href=\"https://gwosc.org/gps/\"><span style=\" text-decoration: underline; color:#005493;\">https://gwosc.org/gps/</span></a></p></body></html>"))
+        self.checkBox_GW_TimeInterval.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Select this option to download data by specifying a GPS time interval.</span></p></body></html>"))
+        self.checkBox_GW_TimeInterval.setText(_translate("MainWindow", "Select data by time interval"))
+        self.label_8.setText(_translate("MainWindow", "<html><head/><body><p>To convert UTC to GPS format visit the link: <a href=\"https://gwosc.org/gps/\"><span style=\" text-decoration: underline; color:#005493;\">https://gwosc.org/gps/</span></a></p></body></html>"))
         self.label_2.setText(_translate("MainWindow", "Starting time (GPS)"))
         self.label_3.setText(_translate("MainWindow", "Ending time (GPS)"))
         self.pushButton.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Download the data and save them in memory for later plotting (no file will be saved in your PC yet).</span></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Download data"))
-        self.label_12.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select a known GW event</span></p></body></html>"))
-        self.label_17.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select from the list</span></p></body></html>"))
+        self.checkBox_knownGW.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Select this option to download data by specifying the event name.</span></p></body></html>"))
+        self.checkBox_knownGW.setText(_translate("MainWindow", "Select a known GW event"))
+        self.label_17.setText(_translate("MainWindow", "Select from the list"))
         self.comboBox_2.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\"font-size: 15px;\">Note that when you select an event from this list the selection via time interval will not be possible.</span></p></body></html>"))
         self.comboBox_2.setItemText(0, _translate("MainWindow", "None"))
-        self.label_18.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">or write the name of the event below</span></p></body></html>"))
-        self.label_14.setText(_translate("MainWindow", "<html><head/><body><p><span style=\"color:#005493;\">Select duration of data segment</span></p></body></html>"))
+        self.label_18.setText(_translate("MainWindow", "or write the name of the event below"))
+        self.label_14.setText(_translate("MainWindow", "Select duration of data segment"))
         self.label_16.setText(_translate("MainWindow", "After merger [s]"))
         self.label_15.setText(_translate("MainWindow", "Before merger [s]"))
-        self.label_13.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#005493;\">Select an example of a known glitch</span></p></body></html>"))
+        self.checkBox_knownGlitch.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Select this option to download data for a known glitch.</span></p></body></html>"))
+        self.checkBox_knownGlitch.setText(_translate("MainWindow", "Select an example of a known glitch"))
         self.comboBox_3.setItemText(0, _translate("MainWindow", "None"))
         self.comboBox_3.setItemText(1, _translate("MainWindow", "Blip"))
         self.pushButton_6.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\"font-size:15px;\">Loads data previously downloaded with the App or GWOSC.</span></p></body></html>"))

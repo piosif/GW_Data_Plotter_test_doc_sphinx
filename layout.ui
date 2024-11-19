@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1040</width>
+    <width>1067</width>
     <height>680</height>
    </rect>
   </property>
@@ -288,13 +288,7 @@
              </spacer>
             </item>
             <item>
-             <widget class="QLabel" name="label_35">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
+             <widget class="QCheckBox" name="checkBox_GW_TimeInterval">
               <property name="font">
                <font>
                 <family>Montserrat</family>
@@ -302,15 +296,38 @@
                 <bold>true</bold>
                </font>
               </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:15px;&quot;&gt;Select this option to download data by specifying a GPS time interval.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #005493</string>
+              </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005493;&quot;&gt;Select data by time interval&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>Select data by time interval</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QLabel" name="label_8">
+              <property name="font">
+               <font>
+                <family>Montserrat</family>
+                <pointsize>13</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+    color: #005493;  /* Blue color when enabled */
+}
+QLabel:disabled {
+    color: #A0A0A0;  /* Grey color when disabled */
+}
+QLabel:disabled a {
+    color: #A0A0A0;  /* Grey color for links when disabled */
+}</string>
+              </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005493;&quot;&gt;To convert UTC to GPS format visit the link: &lt;/span&gt;&lt;a href=&quot;https://gwosc.org/gps/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#005493;&quot;&gt;https://gwosc.org/gps/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To convert UTC to GPS format visit the link: &lt;a href=&quot;https://gwosc.org/gps/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#005493;&quot;&gt;https://gwosc.org/gps/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="wordWrap">
                <bool>true</bool>
@@ -482,7 +499,7 @@
              <number>5</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_12">
+             <widget class="QCheckBox" name="checkBox_knownGW">
               <property name="font">
                <font>
                 <family>Montserrat</family>
@@ -490,15 +507,35 @@
                 <bold>true</bold>
                </font>
               </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:15px;&quot;&gt;Select this option to download data by specifying the event name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #005493</string>
+              </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005493;&quot;&gt;Select a known GW event&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>Select a known GW event</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QLabel" name="label_17">
+              <property name="font">
+               <font>
+                <family>Montserrat</family>
+                <pointsize>13</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+    color: #005493;  /* Blue color when enabled */
+}
+QLabel:disabled {
+    color: #A0A0A0;  /* Grey color when disabled */
+}</string>
+              </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005493;&quot;&gt;Select from the list&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>Select from the list</string>
               </property>
              </widget>
             </item>
@@ -561,8 +598,22 @@
             </item>
             <item>
              <widget class="QLabel" name="label_18">
+              <property name="font">
+               <font>
+                <family>Montserrat</family>
+                <pointsize>13</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+    color: #005493;  /* Blue color when enabled */
+}
+QLabel:disabled {
+    color: #A0A0A0;  /* Grey color when disabled */
+}</string>
+              </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005493;&quot;&gt;or write the name of the event below&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>or write the name of the event below</string>
               </property>
              </widget>
             </item>
@@ -622,8 +673,16 @@
                 <pointsize>13</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+    color: #005493;  /* Blue color when enabled */
+}
+QLabel:disabled {
+    color: #A0A0A0;  /* Grey color when disabled */
+}</string>
+              </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color:#005493;&quot;&gt;Select duration of data segment&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>Select duration of data segment</string>
               </property>
              </widget>
             </item>
@@ -791,13 +850,7 @@
              </spacer>
             </item>
             <item>
-             <widget class="QLabel" name="label_13">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
+             <widget class="QCheckBox" name="checkBox_knownGlitch">
               <property name="font">
                <font>
                 <family>Montserrat</family>
@@ -805,11 +858,14 @@
                 <bold>true</bold>
                </font>
               </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005493;&quot;&gt;Select an example of a known glitch&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:15px;&quot;&gt;Select this option to download data for a known glitch.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
-              <property name="wordWrap">
-               <bool>true</bool>
+              <property name="styleSheet">
+               <string notr="true">color: #005493</string>
+              </property>
+              <property name="text">
+               <string>Select an example of a known glitch</string>
               </property>
              </widget>
             </item>
@@ -2653,6 +2709,582 @@
     <hint type="destinationlabel">
      <x>83</x>
      <y>285</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboBox_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>464</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>EventNameTab3_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_15</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>438</x>
+     <y>406</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_16</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>406</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>doubleSpinBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>438</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>doubleSpinBox_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_14</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>375</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_17</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_18</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboBox_3</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>466</x>
+     <y>553</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>GPSstart</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>481</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>GPSend</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>558</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>442</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_3</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>520</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboBox_3</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>466</x>
+     <y>561</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_8</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>403</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>GPSstart</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>481</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>GPSend</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>558</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>442</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_3</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>520</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboBox_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>464</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>EventNameTab3_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_15</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>438</x>
+     <y>413</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_16</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>413</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>doubleSpinBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>438</x>
+     <y>445</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>doubleSpinBox_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>445</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_knownGlitch</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_GW_TimeInterval</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_knownGW</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_GW_TimeInterval</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_knownGlitch</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_GW_TimeInterval</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkBox_knownGW</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_14</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_17</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_18</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_knownGlitch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_8</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>175</x>
+     <y>389</y>
     </hint>
    </hints>
   </connection>
