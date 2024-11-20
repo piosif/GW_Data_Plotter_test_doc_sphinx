@@ -158,6 +158,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             print("Failed to load fonts")
         elif font_id_1==0 and font_id_2 == 0:
             print("Loaded fonts")
+        font_family = QFontDatabase.applicationFontFamilies(font_id_1)[0]
+        self.custom_font = QFont(font_family)
+        # Set the custom font for the main window
+        self.setFont(self.custom_font)
+
+
         #   
         # These lines are not needed because 'setFont()' lines are already present in the "tabs.py" file
         #          
@@ -1724,6 +1730,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         msg.setInformativeText(text)
         msg.setWindowTitle("Warning")
         msg.setDetailedText(details)
+
+        # PI: Apply our custom font also for the dialog window
+        custom_font = QFont(self.custom_font)
+        custom_font.setPointSize(13) # Set the font size (just for the dialog widow)
+        msg.setFont(custom_font)
         
         
         if(response):
