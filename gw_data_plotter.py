@@ -139,52 +139,33 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
 
         #----------------------------------------------------
-        # PI: Temporarily comment out this part to test the resources file
+        # PI : Use a custom font ("Montserrat") across different systems       
+        # The command 'QFontDatabase.addApplicationFont()' loads the font from 
+        # the file specified and makes it available to the application.
         #
-        # PI : trial to use the "Montserrat" font across different systems       
-        #
-        # QFontDatabase.addApplicationFont() loads the font from the file specified and makes it available to the application.
-        #  
-        # This line uses the full path of the font file  
-        # font_id = QFontDatabase.addApplicationFont(os.path.join(basedir,"fonts/Montserrat/Montserrat_Regular.ttf"))
-        #
-        #
-        # UPDATE: these lines work correctly with the structure of the resources file
+        # These lines work correctly with the structure of the resources file
         font_id_1 = QFontDatabase.addApplicationFont(":/fonts/Montserrat_Regular.ttf")
         font_id_2 = QFontDatabase.addApplicationFont(":/fonts/Montserrat_Bold.ttf")
-        #
+        
+
         # Check if fonts loaded properly
         if font_id_1==-1 or font_id_2== -1:
             print("Failed to load fonts")
         elif font_id_1==0 and font_id_2 == 0:
             print("Loaded fonts")
+
+
+        # Set the custom font for the main window
         font_family = QFontDatabase.applicationFontFamilies(font_id_1)[0]
         self.custom_font = QFont(font_family)
-        # Set the custom font for the main window
         self.setFont(self.custom_font)
 
 
-        #   
-        # These lines are not needed because 'setFont()' lines are already present in the "tabs.py" file
-        #          
-        #     font_family = QFontDatabase.applicationFontFamilies(font_id)[0]
-        #     custom_font = QFont(font_family)
-        #     self.setFont(custom_font)
-        #----------------------------------------------------
-
-        #----------------------------------------------------
-        # PI: comment out this part to test resources file
-        # UPDATE: this works. The logo is included in the resources file and displays correctly in the app. The following line is not needed.
-        #
-        #this is a trick to add the logo
-        # self.label_7.setPixmap(QtGui.QPixmap(os.path.join(basedir, "img", "logo_AHEAD2020_piccolo.png")))
-        #----------------------------------------------------
-
         self.setupUi(self)
+
 
         # Dictionaries to track open windows
         self.open_help_windows = {} #help windows
-        # self.plot_windows = {}  # plotting windows
 
 
         # PI: state variable to track user actions in Tab 3
@@ -216,24 +197,22 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.glitch = None # PI: Initialize to None to avoid error when clicking "Plot Qscan" without downloading data first
 
 
-#        self.pushButton_3.clicked.connect(self.switch1) #this will change tab to the plotting tab
-#        self.pushButton_8.clicked.connect(self.switch0) #this will change tab to the data tab
-        #self.pushButton_3.setToolTip('prova')
         self.pushButton_7.clicked.connect(self.save_data)
         self.pushButton_6.clicked.connect(self.load_data)
         self.pushButton.clicked.connect(self.download_data) 
         self.pushButton_2.clicked.connect(self.plot_strain)
         self.pushButton_4.clicked.connect(self.plot_Qscan)
 
+
         # PI: Connect the help button of each different tab to the show_help method
         self.helpButton1.clicked.connect(self.show_help)
         self.helpButton2.clicked.connect(self.show_help)
         self.helpButton3.clicked.connect(self.show_help)
 
+
         self.pushButton_9.clicked.connect(self.print_event_params)
         self.pushButton_10.clicked.connect(self.plot_parameter_histogram)
         self.pushButton_11.clicked.connect(self.plot_parameter_scatter)
-
 
 
         # PI: Connect the "stateChanged" signal of the QCheckBox to the "reset_combobox" method that resets the comboboxes
@@ -242,10 +221,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.checkBox_knownGW.stateChanged.connect(lambda: self.reset_combobox("knownGW"))
         self.checkBox_knownGlitch.stateChanged.connect(lambda: self.reset_combobox("knownGlitch"))
 
-
         
-
         self.pushButton_13.clicked.connect(self.display_skymap)        
+            
                 
         self.horizontalSlider.valueChanged.connect(self.set_label_min_t) #this is to decide what happens when the value of the slider changes
         self.horizontalSlider_2.valueChanged.connect(self.set_label_max_t) #this is to decide what happens when the value of the slider changes
