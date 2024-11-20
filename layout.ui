@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1067</width>
+    <width>1068</width>
     <height>680</height>
    </rect>
   </property>
@@ -98,6 +98,9 @@
     </item>
     <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
+      <property name="toolTip">
+       <string/>
+      </property>
       <property name="locale">
        <locale language="English" country="UnitedStates"/>
       </property>
@@ -165,6 +168,9 @@
                   <pointsize>13</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays help contents for the &quot;Get Data&quot; tab.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">color:rgb(0, 84, 147);</string>
@@ -336,6 +342,9 @@ QLabel:disabled a {
             </item>
             <item>
              <widget class="QLabel" name="label_2">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;GPS time: seconds elapsed since reference date of 6th January 1980.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>Starting time (GPS)</string>
               </property>
@@ -378,6 +387,9 @@ QLabel:disabled a {
             </item>
             <item>
              <widget class="QLabel" name="label_3">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;GPS time: seconds elapsed since reference date of 6th January 1980.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>Ending time (GPS)</string>
               </property>
@@ -885,6 +897,9 @@ QLabel:disabled {
               </property>
               <item>
                <widget class="QComboBox" name="comboBox_3">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Select a known glitch for the LIGO-Livingston detector. Note that the examples provided currently are for the specific detector only.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <item>
                  <property name="text">
                   <string>None</string>
@@ -1010,6 +1025,9 @@ QLabel:disabled {
                 <bold>false</bold>
                </font>
               </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays tips, warnings and status updates messages.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Log window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
@@ -1028,6 +1046,9 @@ QLabel:disabled {
                 <family>Times New Roman</family>
                 <pointsize>14</pointsize>
                </font>
+              </property>
+              <property name="toolTip">
+               <string/>
               </property>
              </widget>
             </item>
@@ -1079,6 +1100,9 @@ QLabel:disabled {
                   <family>Montserrat</family>
                   <pointsize>13</pointsize>
                  </font>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays help contents for the &quot;Plot Data&quot; tab.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">color:rgb(0, 84, 147);</string>
@@ -1132,6 +1156,9 @@ QLabel:disabled {
             </item>
             <item>
              <widget class="QCheckBox" name="checkBox_5">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Whitening is a process to remove noise from GW data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>Whiten the data</string>
               </property>
@@ -1449,7 +1476,7 @@ QLabel:disabled {
                </font>
               </property>
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;Plot the gravitational wave data (called strain) as function of time.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Plot the gravitational wave data (called strain) as function of time.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="styleSheet">
                <string notr="true">color: rgb(0, 84, 147);</string>
@@ -1480,6 +1507,9 @@ QLabel:disabled {
                 <pointsize>14</pointsize>
                 <bold>true</bold>
                </font>
+              </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;A time-frequency representation based on the Q-transform.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color:#005493;&quot;&gt;Q scan section&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1726,7 +1756,7 @@ QLabel:disabled {
                </font>
               </property>
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;Plot the time-frequency evolution of the gravitational wave data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Plot the time-frequency evolution of the gravitational wave data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="styleSheet">
                <string notr="true">color: rgb(0, 84, 147);</string>
@@ -1757,6 +1787,9 @@ QLabel:disabled {
             </property>
             <item>
              <widget class="QLabel" name="label_31">
+              <property name="toolTip">
+               <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays tips, warnings and status updates messages.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Log window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
@@ -1847,6 +1880,9 @@ QLabel:disabled {
                   <family>Montserrat</family>
                   <pointsize>13</pointsize>
                  </font>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays help contents for the &quot;Explore GW event parameters&quot; tab.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">color:rgb(0, 84, 147);</string>
@@ -2022,6 +2058,9 @@ QLabel:disabled {
                   <pointsize>13</pointsize>
                  </font>
                 </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Downloads the selected event's parameters and displays them in the log window.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">color:rgb(0, 84, 147);</string>
                 </property>
@@ -2069,6 +2108,9 @@ QLabel:disabled {
                   <family>Montserrat</family>
                   <pointsize>13</pointsize>
                  </font>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Downloads, saves and displays the selected event's skymap (sky localization).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">color: rgb(0, 84, 147);</string>
@@ -2479,6 +2521,9 @@ QLabel:disabled {
             </property>
             <item>
              <widget class="QLabel" name="label_34">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays tips, warnings and status updates messages.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Log window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
