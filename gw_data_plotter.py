@@ -707,14 +707,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         self.write_log("- The download was interrupted\n")
                         return
             except:
-                text = f"Please, verify that you have written correctly the event name"
+                text = f"Please, verify that you have written correctly the event name."
                 details = f"You can check the list of available events in the website gwosc.org."
                 self.showdialogWarning(text, details)
                 return
             
         
         if (self.det_label == 'None' and self.glitch=='None'):
-            text = f"Please select a detector"
+            text = f"Please select a detector."
             details = f"Use the drop down menu in the section 'Select a Detector' to select a detector for which you want to download the data. If you select an example of known glitch it is not necessary to select a detector."
             self.showdialogWarning(text, details)
             #self.write_log(f"Please select a detector\n")
@@ -724,8 +724,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         (self.glitch!='None' and self.GPSstart.text()!= '') or (self.glitch!='None' and self.GPSend.text()!= '')
         ):
 #            self.write_log(f"Please, choose only one type of download: GPS interval, GW event or glitch\n")
-            text = f"Please, choose only one type of download: GPS interval, GW event or glitch"
-            details = f"Set the drop down menu of glitches and events to None if you don't want to download one of them or if you want to select by hand a time interval."
+            text = f"Please, choose only one type of download: GPS interval, GW event or glitch."
+            details = f"Click the appropriate checkbox next to each section label: i.e. select either by 'time interval', 'known GW event' or 'known glitch'."
             self.showdialogWarning(text, details)
 
         else:
@@ -781,7 +781,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if (self.glitch in self.glitches_dict):
                 #currently all glitches examples are from the same detector
                 if (self.det_label != 'None'):
-                    text = f"Your detector choice will be ignored in this case"
+                    text = f"Your detector choice will be ignored in this case."
                     details = f"Glitches can happen in different times for each detector. The examples provided here are chosen for a specific detector so the detector choice is disabled."
                     self.showdialogWarning(text, details)
                 self.det = 'H1'
@@ -864,8 +864,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
             else:
                 #self.write_log("- Please, give correct GPS times to download the data\n")
-                text = f"Please, give correct GPS times to download the data"
-                details = f"This error may occur if you have not selected a correct GPS interval. You can also choose to download data around a known GW event or a glitch"
+                text = f"Please, give correct GPS times to download the data."
+                details = f"This error may occur if you have not selected a correct GPS interval. You can also choose to download data around a known GW event or a glitch."
                 self.showdialogWarning(text, details)
                 
 
@@ -1354,13 +1354,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         x = np.log10(x)
                     ax.axvline(x=x, color='tab:orange', label=self.event_tab3)
                 except KeyError:
-                    text = f"The value of {key} will not be highlighted on the plot for the selected event"
-                    details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again"
+                    text = f"The value of {key} will not be highlighted on the plot for the selected event."
+                    details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again."
                     self.showdialogWarning(text, details)
                     # except AttributeError or TypeError:
                 except TypeError:
-                    text = f"The value of {key} will not be highlighted on the plot for the selected event"
-                    details = f"The parameter {key} for {self.event_tab3} is not defined"
+                    text = f"The value of {key} will not be highlighted on the plot for the selected event."
+                    details = f"The parameter {key} for {self.event_tab3} is not defined."
                     self.showdialogWarning(text, details)
                 
             ax.legend()
@@ -1408,12 +1408,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 if (self.event_parameters[key1]['value'] and self.event_parameters[key2]['value']):
                     ax.scatter(self.event_parameters[key1]['value'], self.event_parameters[key2]['value'], edgecolors='tab:orange', facecolor="none", label=self.event_tab3)
                 else:
-                    text = f"The values of {key1} and {key2} will not be highlighted on the plot for the selected event"
-                    details = f"One among the parameters {key1} and {key2} for {self.event_tab3} is not defined"
+                    text = f"The values of {key1} and {key2} will not be highlighted on the plot for the selected event."
+                    details = f"One among the parameters {key1} and {key2} for {self.event_tab3} is not defined."
                     self.showdialogWarning(text, details)    
             except KeyError:
-                text = f"The values of {key1} and {key2} will not be highlighted on the plot for the selected event"
-                details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again"
+                text = f"The values of {key1} and {key2} will not be highlighted on the plot for the selected event."
+                details = "Use the button 'Get event parameters' to get the value of the parameters for the event and then plot the histogram again."
                 self.showdialogWarning(text, details)
 
         ax.legend()
@@ -1557,7 +1557,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     #after the bandpass the data will be cropped so the residual duration has to be checked to avoid problems
                     if ((self.GPS_start+0.1)==(self.GPS_end-0.1)):
                         warn_text = f"At least 0.2 seconds of data are required to apply a bandpass filter."
-                        warn_details = "Bacause of border effects caused by the band pass filter, data are cropped by 0.1 s at both ends."
+                        warn_details = "Because of border effects caused by the band pass filter, data are cropped by 0.1 s at both ends."
                         warn_details += " The duration of the data you have downloaded is not enough to have residual data to plot after the cropping."
                         warn_details +=" You can download a longer segment of data or disable the bandpass filter option."
                         self.showdialogWarning(warn_text, warn_details)
@@ -1724,11 +1724,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def showdialogWarning(self, text="Additional information", details = "Details", response=False):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Icon.Warning)
-
-        
-        msg.setText("Warning")
-        msg.setInformativeText(text)
         msg.setWindowTitle("Warning")
+
+        msg.setText(text)
         msg.setDetailedText(details)
 
         # PI: Apply our custom font also for the dialog window
@@ -1772,8 +1770,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         event_name = 0
         if (dropdown == "None" and textbox == ""):
 #            self.write_log_event("Please select an event")
-            textw = f"Please select an event"
-            detailsw = f"Select an event from the drop down menu or write an event name in the text box"
+            textw = f"Please select an event."
+            detailsw = f"Select an event from the drop down menu or write an event name in the text box."
             self.showdialogWarning(textw, detailsw)
         elif ((dropdown != "None") and (textbox == "")):
             event_name = dropdown.split(" ")[0]
@@ -1788,8 +1786,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             event_ok = True
         else:
 #            self.write_log_event("Please choose only one option between writing the event name and selecting from a list")
-            textw = f"Please choose only one option between writing the event name and selecting from a list"
-            detailsw = f"Verify that the drop down menu is set to None when you write the event name in the text box"
+            textw = f"Please choose only one option between writing the event name and selecting from a list."
+            detailsw = f"Verify that the drop down menu is set to None when you write the event name in the text box."
             self.showdialogWarning(textw, detailsw)
         return event_name
 
