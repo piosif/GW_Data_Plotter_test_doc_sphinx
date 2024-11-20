@@ -1026,7 +1026,7 @@ QLabel:disabled {
                </font>
               </property>
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays tips, warnings and status updates messages.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays tips, warnings and status update messages.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Log window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1788,7 +1788,7 @@ QLabel:disabled {
             <item>
              <widget class="QLabel" name="label_31">
               <property name="toolTip">
-               <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays tips, warnings and status updates messages.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays tips, warnings and status update messages.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Log window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -2522,7 +2522,7 @@ QLabel:disabled {
             <item>
              <widget class="QLabel" name="label_34">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays tips, warnings and status updates messages.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Displays tips, warnings and status update messages.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Log window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
