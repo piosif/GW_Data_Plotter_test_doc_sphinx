@@ -924,7 +924,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             # Check if the user changed the suggested filename.
             # Check only the basename and don't bother with the file extension.
             if os.path.basename(filename).split('.')[0] != suggested_filename.split('.')[0]:
-                response = self.warning_message_box()
+                text = f"We recommend not changing the suggested filename to ensure proper handling of files when loading data previously downloaded with the application. Are you sure you want to continue?"
+                response = self.showdialogWarning(text, None, True)
                 if response == QMessageBox.StandardButton.No:
                     # Continue the loop to reopen the save file dialog with the suggested filename
                     continue           
@@ -1700,34 +1701,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 ############################
-	
-    def showdialog(self):
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Icon.Information)
 
-        
-        msg.setText("This window contains instructions on how to use this tab")
-        msg.setInformativeText("This is additional information")
-        msg.setWindowTitle("MessageBox demo")
-        msg.setDetailedText("The details are as follows:\n This is not a good choice because the app in not active when this window is open.\nFind a way to make the Main Window active when running this.")
- #       msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
- #       msg.buttonClicked.connect(msgbtn)
-        msg.exec()
-#        print( "value of pressed message box button:", retval)
-	
-#    def msgbtn(i):
-#        print ("Button pressed is:",i.text())
-
-
-############################
-
-    def showdialogWarning(self, text="Additional information", details = "Details", response=False):
+    def showdialogWarning(self, text="Additional information", details = None, response=False):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Icon.Warning)
         msg.setWindowTitle("Warning")
 
         msg.setText(text)
-        msg.setDetailedText(details)
+
+        # PI: Set detailed text only if provided
+        if details:
+            msg.setDetailedText(details)
 
         # PI: Apply our custom font also for the dialog window
         custom_font = QFont(self.custom_font)
@@ -1742,25 +1726,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             return response
         else:
             msg.exec()
-
-############################
-
-    # PI: A method to display a warning message box when the user tries to change the suggested filename
-    # AT: Note that this method is similar to the previous one so they could be merged
-    def warning_message_box(self):
-        # Display a warning message
-        warning_msg_box = QMessageBox()
-        warning_msg_box.setIcon(QMessageBox.Icon.Warning)
-        warning_msg_box.setWindowTitle("Warning")
-        warning_msg_box.setText("We recommend not changing the suggested filename to ensure proper handling of files when loading data previously downloaded with the application. Are you sure you want to continue?")
-        warning_msg_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-        warning_msg_box.setDefaultButton(QMessageBox.StandardButton.No)
-        
-        # NOTE: the text in the message box appears a bit small. 
-        # Find a way to increase the font size of the text in the message box.
-
-        response = warning_msg_box.exec()
-        return response
 
 
 ############################
