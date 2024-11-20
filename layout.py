@@ -992,7 +992,7 @@ class Ui_MainWindow(object):
         self.label_15.setText(_translate("MainWindow", "Before merger [s]"))
         self.checkBox_knownGlitch.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Select this option to download data for a known glitch.</span></p></body></html>"))
         self.checkBox_knownGlitch.setText(_translate("MainWindow", "Select an example of a known glitch"))
-        self.comboBox_3.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\"color: #005493; font-size: 15px;\">Select a known glitch for the LIGO-Livingston detector. Note that the examples provided currently are for the specific detector only.</span></p></body></html>"))
+        self.comboBox_3.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\"color: #005493; font-size: 15px;\">Select a known glitch for the LIGO-Hanford detector. Note that the examples provided currently are for the specific detector only.</span></p></body></html>"))
         self.comboBox_3.setItemText(0, _translate("MainWindow", "None"))
         self.comboBox_3.setItemText(1, _translate("MainWindow", "Blip"))
         self.pushButton_6.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\"font-size:15px;\">Loads data previously downloaded with the App or GWOSC.</span></p></body></html>"))

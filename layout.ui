@@ -898,7 +898,7 @@ QLabel:disabled {
               <item>
                <widget class="QComboBox" name="comboBox_3">
                 <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Select a known glitch for the LIGO-Livingston detector. Note that the examples provided currently are for the specific detector only.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Select a known glitch for the LIGO-Hanford detector. Note that the examples provided currently are for the specific detector only.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <item>
                  <property name="text">
