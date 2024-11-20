@@ -559,7 +559,7 @@ QLabel:disabled {
               <item>
                <widget class="QComboBox" name="comboBox_2">
                 <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;Note that when you select an event from this list the selection via time interval will not be possible.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Note that when you select an event from this list the selection via time interval will not be possible.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <item>
                  <property name="text">
@@ -1031,22 +1031,6 @@ QLabel:disabled {
               </property>
              </widget>
             </item>
-<<<<<<< HEAD
-=======
-            <item>
-             <widget class="QProgressBar" name="download_progressBar">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color:#005493;font-size:15px;&quot;&gt;Displays download progress.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="maximum">
-               <number>100</number>
-              </property>
-              <property name="value">
-               <number>0</number>
-              </property>
-             </widget>
-            </item>
->>>>>>> 36868e2 (tab1: empty irrelevant text boxes when other checkbox selected)
            </layout>
           </item>
          </layout>
@@ -2543,12 +2527,12 @@ QLabel:disabled {
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>263</x>
-     <y>643</y>
+     <x>640</x>
+     <y>452</y>
     </hint>
     <hint type="destinationlabel">
-     <x>108</x>
-     <y>668</y>
+     <x>485</x>
+     <y>478</y>
     </hint>
    </hints>
   </connection>
@@ -2563,8 +2547,8 @@ QLabel:disabled {
      <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>63</x>
-     <y>308</y>
+     <x>81</x>
+     <y>433</y>
     </hint>
    </hints>
   </connection>
@@ -2575,12 +2559,12 @@ QLabel:disabled {
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>138</x>
-     <y>367</y>
+     <x>151</x>
+     <y>485</y>
     </hint>
     <hint type="destinationlabel">
-     <x>93</x>
-     <y>423</y>
+     <x>111</x>
+     <y>547</y>
     </hint>
    </hints>
   </connection>
@@ -2591,12 +2575,12 @@ QLabel:disabled {
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>138</x>
-     <y>367</y>
+     <x>151</x>
+     <y>485</y>
     </hint>
     <hint type="destinationlabel">
-     <x>613</x>
-     <y>503</y>
+     <x>369</x>
+     <y>547</y>
     </hint>
    </hints>
   </connection>
@@ -2607,12 +2591,12 @@ QLabel:disabled {
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>138</x>
-     <y>367</y>
+     <x>151</x>
+     <y>485</y>
     </hint>
     <hint type="destinationlabel">
-     <x>98</x>
-     <y>395</y>
+     <x>116</x>
+     <y>517</y>
     </hint>
    </hints>
   </connection>
@@ -2623,12 +2607,12 @@ QLabel:disabled {
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>138</x>
-     <y>367</y>
+     <x>151</x>
+     <y>485</y>
     </hint>
     <hint type="destinationlabel">
-     <x>93</x>
-     <y>447</y>
+     <x>111</x>
+     <y>578</y>
     </hint>
    </hints>
   </connection>
@@ -2639,12 +2623,12 @@ QLabel:disabled {
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>138</x>
-     <y>367</y>
+     <x>151</x>
+     <y>485</y>
     </hint>
     <hint type="destinationlabel">
-     <x>213</x>
-     <y>447</y>
+     <x>369</x>
+     <y>578</y>
     </hint>
    </hints>
   </connection>
@@ -2659,8 +2643,8 @@ QLabel:disabled {
      <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>213</x>
-     <y>308</y>
+     <x>319</x>
+     <y>433</y>
     </hint>
    </hints>
   </connection>
@@ -2675,8 +2659,8 @@ QLabel:disabled {
      <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
-     <y>285</y>
+     <x>319</x>
+     <y>394</y>
     </hint>
    </hints>
   </connection>
@@ -2687,12 +2671,12 @@ QLabel:disabled {
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>263</x>
-     <y>643</y>
+     <x>640</x>
+     <y>452</y>
     </hint>
     <hint type="destinationlabel">
-     <x>63</x>
-     <y>688</y>
+     <x>445</x>
+     <y>517</y>
     </hint>
    </hints>
   </connection>
@@ -2703,12 +2687,12 @@ QLabel:disabled {
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>138</x>
-     <y>367</y>
+     <x>151</x>
+     <y>485</y>
     </hint>
     <hint type="destinationlabel">
-     <x>258</x>
-     <y>395</y>
+     <x>369</x>
+     <y>517</y>
     </hint>
    </hints>
   </connection>
@@ -2723,8 +2707,8 @@ QLabel:disabled {
      <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>83</x>
-     <y>285</y>
+     <x>101</x>
+     <y>394</y>
     </hint>
    </hints>
   </connection>
@@ -2735,8 +2719,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
      <x>464</x>
@@ -2751,8 +2735,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
      <x>444</x>
@@ -2767,12 +2751,12 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
-     <x>438</x>
-     <y>406</y>
+     <x>492</x>
+     <y>428</y>
     </hint>
    </hints>
   </connection>
@@ -2783,12 +2767,12 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
-     <x>596</x>
-     <y>406</y>
+     <x>676</x>
+     <y>428</y>
     </hint>
    </hints>
   </connection>
@@ -2799,8 +2783,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
      <x>438</x>
@@ -2815,8 +2799,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
      <x>596</x>
@@ -2831,12 +2815,12 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
-     <x>519</x>
-     <y>375</y>
+     <x>725</x>
+     <y>397</y>
     </hint>
    </hints>
   </connection>
@@ -2847,8 +2831,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
      <x>519</x>
@@ -2863,8 +2847,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
      <x>519</x>
@@ -2879,8 +2863,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
      <x>466</x>
@@ -2931,8 +2915,8 @@ QLabel:disabled {
      <y>179</y>
     </hint>
     <hint type="destinationlabel">
-     <x>185</x>
-     <y>442</y>
+     <x>202</x>
+     <y>441</y>
     </hint>
    </hints>
   </connection>
@@ -2991,8 +2975,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
      <x>110</x>
@@ -3007,8 +2991,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
      <x>110</x>
@@ -3023,12 +3007,12 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>185</x>
-     <y>442</y>
+     <x>202</x>
+     <y>441</y>
     </hint>
    </hints>
   </connection>
@@ -3039,8 +3023,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
      <x>185</x>
@@ -3055,12 +3039,12 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>464</x>
-     <y>272</y>
+     <x>588</x>
+     <y>260</y>
     </hint>
    </hints>
   </connection>
@@ -3071,8 +3055,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
      <x>444</x>
@@ -3087,8 +3071,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
      <x>438</x>
@@ -3103,8 +3087,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
      <x>596</x>
@@ -3119,8 +3103,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
      <x>438</x>
@@ -3135,8 +3119,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
      <x>596</x>
@@ -3151,12 +3135,12 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
    </hints>
   </connection>
@@ -3167,8 +3151,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
     <hint type="destinationlabel">
      <x>519</x>
@@ -3187,8 +3171,8 @@ QLabel:disabled {
      <y>179</y>
     </hint>
     <hint type="destinationlabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
    </hints>
   </connection>
@@ -3203,8 +3187,8 @@ QLabel:disabled {
      <y>179</y>
     </hint>
     <hint type="destinationlabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
    </hints>
   </connection>
@@ -3215,12 +3199,12 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>185</x>
-     <y>327</y>
+     <x>202</x>
+     <y>358</y>
     </hint>
    </hints>
   </connection>
@@ -3231,8 +3215,8 @@ QLabel:disabled {
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>473</y>
+     <x>725</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
      <x>519</x>
@@ -3397,22 +3381,6 @@ QLabel:disabled {
     <hint type="destinationlabel">
      <x>436</x>
      <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_GW_TimeInterval</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>comboBox_2</receiver>
-   <slot>update()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>175</x>
-     <y>343</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>466</x>
-     <y>246</y>
     </hint>
    </hints>
   </connection>

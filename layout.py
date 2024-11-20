@@ -954,7 +954,6 @@ class Ui_MainWindow(object):
         self.checkBox_knownGlitch.toggled['bool'].connect(self.GPSend.clear) # type: ignore
         self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.EventNameTab3_2.clear) # type: ignore
         self.checkBox_knownGlitch.toggled['bool'].connect(self.EventNameTab3_2.clear) # type: ignore
-        self.checkBox_GW_TimeInterval.toggled['bool'].connect(self.comboBox_2.update) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textBrowser, self.tabWidget)
 
@@ -979,7 +978,7 @@ class Ui_MainWindow(object):
         self.checkBox_knownGW.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15px;\">Select this option to download data by specifying the event name.</span></p></body></html>"))
         self.checkBox_knownGW.setText(_translate("MainWindow", "Select a known GW event"))
         self.label_17.setText(_translate("MainWindow", "Select from the list"))
-        self.comboBox_2.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\"font-size: 15px;\">Note that when you select an event from this list the selection via time interval will not be possible.</span></p></body></html>"))
+        self.comboBox_2.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\"color: #005493; font-size: 15px;\">Note that when you select an event from this list the selection via time interval will not be possible.</span></p></body></html>"))
         self.comboBox_2.setItemText(0, _translate("MainWindow", "None"))
         self.label_18.setText(_translate("MainWindow", "or write the name of the event below"))
         self.label_14.setText(_translate("MainWindow", "Select duration of data segment"))

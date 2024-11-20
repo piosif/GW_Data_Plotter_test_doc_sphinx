@@ -229,8 +229,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_11.clicked.connect(self.plot_parameter_scatter)
 
 
-        # PI: We want to remove this button and implement its functionality in the "Plot histogram" and "2D scatter plot" buttons
-        # self.pushButton_12.clicked.connect(self.get_catalogs)
+
+        # PI: Connect the "stateChanged" signal of the QCheckBox to the "reset_combobox" method that resets the comboboxes
+        # Use a lambda function to pass an argument to the method, monitoring which checkbox was clicked
+        self.checkBox_GW_TimeInterval.stateChanged.connect(lambda: self.reset_combobox("GW_TimeInterval"))
+        self.checkBox_knownGW.stateChanged.connect(lambda: self.reset_combobox("knownGW"))
+        self.checkBox_knownGlitch.stateChanged.connect(lambda: self.reset_combobox("knownGlitch"))
+
+
         
 
         self.pushButton_13.clicked.connect(self.display_skymap)        
@@ -463,6 +469,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             "Emax":80
           }
         }
+
+############################
+# PI: method to reset the comboboxes in Tab 1 to first show when the different checkboxes are clicked
+
+    def reset_combobox(self, checkbox):
+        if checkbox == "GW_TimeInterval":
+            self.comboBox_2.setCurrentIndex(0)
+            self.comboBox_3.setCurrentIndex(0)
+        elif checkbox == "knownGW":
+            self.comboBox_3.setCurrentIndex(0)
+        elif checkbox == "knownGlitch":
+            self.comboBox_2.setCurrentIndex(0) 
+
 
 
 ############################
