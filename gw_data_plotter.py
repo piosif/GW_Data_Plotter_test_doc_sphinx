@@ -206,6 +206,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_4.clicked.connect(self.plot_Qscan)
 
 
+        # PI: Connect the about button to the show_about method
+        self.aboutButton.clicked.connect(self.show_about)   
+
+
         # PI: Connect the help button of each different tab to the show_help method
         self.helpButton1.clicked.connect(self.show_help)
         self.helpButton2.clicked.connect(self.show_help)
@@ -468,6 +472,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif checkbox == "knownGlitch":
             self.comboBox_2.setCurrentIndex(0) 
 
+
+############################
+# PI: Show about info for the app in a new window
+
+    def show_about(self):
+        print("This is an about message!")
 
 
 ############################
