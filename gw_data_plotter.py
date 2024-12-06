@@ -477,7 +477,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 # PI: Show about info for the app in a new window
 
     def show_about(self):
-        print("This is an about message!")
+        text = f"""This app allows downloading public GW data recorded by the LIGO, Virgo, KAGRA and GEO GW detectors via the Gravitational Wave Open Science Center (https://gwosc.org), visualizing them and performing basic analysis tasks. 
+        \nThe app’s development was funded by AHEAD 2020, a Horizon 2020 Framework Program of the European Union (Grant Agreement 871158).
+        """
+        # details = f".............."
+        # self.showdialogWarning(text, details)
+        self.showdialogWarning(text)
+
 
 
 ############################
