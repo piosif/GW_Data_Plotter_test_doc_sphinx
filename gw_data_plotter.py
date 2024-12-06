@@ -18,7 +18,9 @@ from gwpy.timeseries import TimeSeries
 from gwosc.api import fetch_event_json, fetch_json
 
 
-from layout import Ui_MainWindow
+# from layout import Ui_MainWindow
+from layout_about import Ui_MainWindow # PI: trial with About button placement
+
 
 
 import app_resources #PI: use a resources file (.qrc) to include images and fonts
