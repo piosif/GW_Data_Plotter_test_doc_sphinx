@@ -480,9 +480,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         text = f"""This app allows downloading public GW data recorded by the LIGO, Virgo, KAGRA and GEO GW detectors via the Gravitational Wave Open Science Center (https://gwosc.org), visualizing them and performing basic analysis tasks. 
         \nThe app’s development was funded by AHEAD 2020, a Horizon 2020 Framework Program of the European Union (Grant Agreement 871158).
         """
-        # details = f".............."
-        # self.showdialogWarning(text, details)
-        self.showdialogWarning(text)
+        self.showdialogWarning(text, title= "Information")
 
 
 
@@ -1698,10 +1696,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 ############################
 
-    def showdialogWarning(self, text="Additional information", details = None, response=False):
+    def showdialogWarning(self, text="Additional information", details = None, response=False, title = "Warning"):
         msg = QMessageBox()
-        msg.setIcon(QMessageBox.Icon.Warning)
-        msg.setWindowTitle("Warning")
+        
+        if title == "Warning":
+            msg.setIcon(QMessageBox.Icon.Warning)
+            msg.setWindowTitle("Warning")
+        elif title == "Information":
+            msg.setIcon(QMessageBox.Icon.Information)
+            msg.setWindowTitle("About")
 
         msg.setText(text)
 
