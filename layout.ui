@@ -29,9 +29,6 @@
    <layout class="QGridLayout" name="gridLayout_7">
     <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
-      <property name="toolTip">
-       <string/>
-      </property>
       <property name="locale">
        <locale language="English" country="UnitedStates"/>
       </property>
@@ -41,6 +38,9 @@
       <widget class="QWidget" name="tab">
        <attribute name="title">
         <string>Get Data</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;First select a detector and then click on one of the 3 checkboxes to download some data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
@@ -999,6 +999,9 @@ QLabel:disabled {
        <attribute name="title">
         <string>Plot Data</string>
        </attribute>
+       <attribute name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;After having downloaded some data, click on 'Plot strain' and 'Plot Qscan' to visualize them.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </attribute>
        <layout class="QGridLayout" name="gridLayout_6">
         <item row="0" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -1757,6 +1760,9 @@ QLabel:disabled {
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
         <string>Explore GW event parameters</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;color: #005493; font-size: 15px;&quot;&gt;Download skymaps of GW events and analyze parameter distributions with histograms and scatter plots.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_8">
         <item row="0" column="0">
