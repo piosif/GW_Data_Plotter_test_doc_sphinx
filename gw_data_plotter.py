@@ -477,8 +477,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 # PI: Show about info for the app in a new window
 
     def show_about(self):
-        text = f"""This app allows downloading public GW data recorded by the LIGO, Virgo, KAGRA and GEO GW detectors via the Gravitational Wave Open Science Center (https://gwosc.org), visualizing them and performing basic analysis tasks. 
-        \nThe app’s development was funded by AHEAD 2020, a Horizon 2020 Framework Program of the European Union (Grant Agreement 871158).
+        text = f"""This app allows downloading public GW data recorded by the LIGO, Virgo, KAGRA and GEO GW detectors 
+        via the Gravitational Wave Open Science Center (<a href="https://gwosc.org">https://gwosc.org</a>), 
+        visualizing them and performing basic analysis tasks. 
+        <br><br>
+        The app’s development was funded by AHEAD 2020, a Horizon 2020 Framework Program of the European Union (Grant Agreement 871158).
         """
         self.showdialogWarning(text, title= "Information")
 
@@ -1706,6 +1709,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             msg.setIcon(QMessageBox.Icon.Information)
             msg.setWindowTitle("About")
 
+        # PI: Set the text format to RichText to allow HTML formatting,
+        # needed so that the link to the GWOSC website is clickable in the About MessageBox
+        msg.setTextFormat(Qt.TextFormat.RichText)
         msg.setText(text)
 
         # PI: Set detailed text only if provided
