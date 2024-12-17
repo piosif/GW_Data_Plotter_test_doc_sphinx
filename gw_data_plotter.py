@@ -18,9 +18,7 @@ from gwpy.timeseries import TimeSeries
 from gwosc.api import fetch_event_json, fetch_json
 
 
-# from layout import Ui_MainWindow
-from layout_about import Ui_MainWindow # PI: trial with About button placement
-
+from layout import Ui_MainWindow
 
 
 import app_resources #PI: use a resources file (.qrc) to include images and fonts
@@ -206,8 +204,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_4.clicked.connect(self.plot_Qscan)
 
 
-        # PI: Connect the about button to the show_about method
-        self.aboutButton.clicked.connect(self.show_about)   
+        # PI: Connect the 'About' Action of the menuBar to the 'show_about' method
+        self.aboutInfo.triggered.connect(self.show_about)  
 
 
         # PI: Connect the help button of each different tab to the show_help method
@@ -477,11 +475,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 # PI: Show about info for the app in a new window
 
     def show_about(self):
-        text = f"""This app allows downloading public GW data recorded by the LIGO, Virgo, KAGRA and GEO GW detectors 
-        via the Gravitational Wave Open Science Center (<a href="https://gwosc.org">https://gwosc.org</a>), 
-        visualizing them and performing basic analysis tasks. 
+        # PI: description text uses HTML, the 'showdialogWarning' method handles the HTML formatting
+        text = f"""
+        This app allows users to download public gravitational wave data from the LIGO, Virgo, KAGRA, and GEO detectors 
+        via the <a href="https://gwosc.org">Gravitational Wave Open Science Center</a>. 
+        It also facilitates basic visualization and analysis.
         <br><br>
-        The app’s development was funded by AHEAD 2020, a Horizon 2020 Framework Program of the European Union (Grant Agreement 871158).
+        Developed with funding from AHEAD 2020, a Horizon 2020 Framework Program of the European Union (Grant Agreement 871158).
         """
         self.showdialogWarning(text, title= "Information")
 
