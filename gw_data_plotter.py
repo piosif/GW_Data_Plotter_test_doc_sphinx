@@ -547,7 +547,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 <li style="margin-bottom: 10px;">We suggest downloading at least 2 seconds of data in order to whiten them (whitening is a process to remove noise).</li>
                 <li style="margin-bottom: 10px;">Under the "Select a known GW event" section, users can select to download a few showcase GW events or type the name of a specific event.</li>
                 <li style="margin-bottom: 10px;">Check this page <span style="color: blue; text-decoration: underline;">https://gwosc.org/eventapi/</span> to get the GPS times and names of all known detections.</li>
-                <li style="margin-bottom: 10px;">The "Download data" button downloads and saves the data in a local variable and no file will be saved on the user's PC yet.</li>
+                <li style="margin-bottom: 10px;">The "Download data" button downloads and saves the data in memory and no file will be saved on the user's PC yet.</li>
                 <li style="margin-bottom: 10px;">There is support to save the data in different formats (.hdf5, .gwf, and .txt) or load previously downloaded files.
                     <ul style="list-style-type: disc; margin-left: 20px;">
                         <li style="margin-bottom: 5px;">(Known issue: the executable files currently do not support saving and loading of '.gwf' files)</li>
