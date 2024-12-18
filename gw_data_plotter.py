@@ -18,7 +18,9 @@ from gwpy.timeseries import TimeSeries
 from gwosc.api import fetch_event_json, fetch_json
 
 
-from layout import Ui_MainWindow
+# from layout import Ui_MainWindow
+from layout_text_without_color import Ui_MainWindow
+
 
 
 import app_resources #PI: use a resources file (.qrc) to include images and fonts
