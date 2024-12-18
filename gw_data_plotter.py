@@ -476,10 +476,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def show_about(self):
         # PI: description text uses HTML, the 'showdialogWarning' method handles the HTML formatting
-        text = f"""
-        This app allows users to download public gravitational wave data from the LIGO, Virgo, KAGRA, and GEO detectors via the <a href="https://gwosc.org">Gravitational Wave Open Science Center</a>. It also facilitates basic visualization and analysis.
-        <br><br>
-        Developed with funding from AHEAD 2020, a Horizon 2020 Framework Program of the European Union (Grant Agreement 871158).
+        text = f"""This app allows users to download public gravitational wave data from the LIGO, Virgo, KAGRA, and GEO detectors via the Gravitational Wave Open Science Center (https://gwosc.org). It also facilitates basic visualization and analysis.
+        \nDeveloped with funding from AHEAD 2020, a Horizon 2020 Framework Program of the European Union (Grant Agreement 871158).
         """
         self.showdialogWarning(text, title= "Information")
 
@@ -1709,7 +1707,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # PI: Set the text format to RichText to allow HTML formatting,
         # needed so that the link to the GWOSC website is clickable in the About MessageBox
-        msg.setTextFormat(Qt.TextFormat.RichText)
+        # PI: Disable for now. Seems the 'HTML+QMessageBox' combination does not work on macOS.
+        # msg.setTextFormat(Qt.TextFormat.RichText)
         msg.setText(text)
 
         # PI: Set detailed text only if provided
