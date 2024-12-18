@@ -477,9 +477,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def show_about(self):
         # PI: description text uses HTML, the 'showdialogWarning' method handles the HTML formatting
         text = f"""
-        This app allows users to download public gravitational wave data from the LIGO, Virgo, KAGRA, and GEO detectors 
-        via the <a href="https://gwosc.org">Gravitational Wave Open Science Center</a>. 
-        It also facilitates basic visualization and analysis.
+        This app allows users to download public gravitational wave data from the LIGO, Virgo, KAGRA, and GEO detectors via the <a href="https://gwosc.org">Gravitational Wave Open Science Center</a>. It also facilitates basic visualization and analysis.
         <br><br>
         Developed with funding from AHEAD 2020, a Horizon 2020 Framework Program of the European Union (Grant Agreement 871158).
         """

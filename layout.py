@@ -928,6 +928,7 @@ class Ui_MainWindow(object):
         font.setFamily("Montserrat")
         font.setPointSize(11)
         self.aboutInfo.setFont(font)
+        self.aboutInfo.setMenuRole(QtGui.QAction.MenuRole.NoRole)
         self.aboutInfo.setObjectName("aboutInfo")
         self.menuAbout.addAction(self.aboutInfo)
         self.menuBar.addAction(self.menuAbout.menuAction())

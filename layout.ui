@@ -2628,6 +2628,9 @@ QLabel:disabled {
      <pointsize>11</pointsize>
     </font>
    </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
   </action>
  </widget>
  <tabstops>
