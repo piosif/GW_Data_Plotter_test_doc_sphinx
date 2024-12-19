@@ -883,6 +883,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("Montserrat")
         font.setPointSize(11)
+        font.setBold(True)
         self.aboutInfo.setFont(font)
         self.aboutInfo.setMenuRole(QtGui.QAction.MenuRole.NoRole)
         self.aboutInfo.setObjectName("aboutInfo")

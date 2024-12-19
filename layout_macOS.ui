@@ -2537,6 +2537,7 @@ QLabel:disabled a {
     <font>
      <family>Montserrat</family>
      <pointsize>11</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="menuRole">
