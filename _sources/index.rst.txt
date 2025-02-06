@@ -12,6 +12,8 @@ documentation for details.
 
 Hello, world!
 
+I made a change!
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
