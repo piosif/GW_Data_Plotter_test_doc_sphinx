@@ -1,4 +1,4 @@
-name: "Sphinx: Render docs"
+name: "Sphinx: build HTML and deploy"
 
 on: push
 
@@ -22,9 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r docs/requirements.txt
     
-
     - name: Build HTML
-      # uses: ammaraskar/sphinx-action@master
       run: |
         cd docs
         make html
