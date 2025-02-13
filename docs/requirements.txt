@@ -1,0 +1,2 @@
+# furo theme version
+furo==2024.8.6
