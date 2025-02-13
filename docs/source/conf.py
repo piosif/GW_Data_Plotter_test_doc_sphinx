@@ -15,6 +15,7 @@ author = 'Panagiotis Iosif'
 
 extensions = [
     "sphinx.ext.githubpages",
+    'myst_parser',
 ]
 
 templates_path = ['_templates']
