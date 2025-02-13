@@ -18,3 +18,4 @@ I made a change!
    :maxdepth: 2
    :caption: Contents:
 
+   sample_page.md
