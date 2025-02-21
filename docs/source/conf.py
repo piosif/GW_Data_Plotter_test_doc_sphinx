@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'App_draft_doc'
-copyright = '2025, Panagiotis Iosif'
+project = 'GW Data Plotter'
+copyright = '2025, Panagiotis Iosif and Agata Trovato'
 author = 'Panagiotis Iosif'
 
 # -- General configuration ---------------------------------------------------
