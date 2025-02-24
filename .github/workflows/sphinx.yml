@@ -6,6 +6,8 @@ on:
       - main # Trigger the workflow only on push events to the main branch
     paths:
       - 'docs/**' # Trigger the workflow only when changes are made to files in the docs/ folder
+  workflow_dispatch:  # Enables manual trigger of the workflow
+
 
 jobs:
   build:
