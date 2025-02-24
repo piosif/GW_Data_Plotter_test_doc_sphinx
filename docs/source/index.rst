@@ -1,8 +1,3 @@
-.. App_draft_doc documentation master file, created by
-   sphinx-quickstart on Thu Jan 30 17:38:26 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 GW Data Plotter
 ===============
 
