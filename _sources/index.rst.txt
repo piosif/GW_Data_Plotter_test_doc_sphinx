@@ -4,8 +4,6 @@ GW Data Plotter
 What does it do?
 ----------------
 
-TEST CHANGE
-
 **GW Data Plotter** is a desktop application that simplifies access to Gravitational Wave (GW) data 
 and facilitates basic visualization and analysis.
 
