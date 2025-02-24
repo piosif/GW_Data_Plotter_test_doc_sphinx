@@ -3,9 +3,9 @@ Useful Links
 
 Resources related to the **GW Data Plotter** app:
 
-* `app's Zenodo record <https://doi.org/10.5281/zenodo.13778827>`_
-* `app's GitHub repository <https://github.com/camurria/GW_Data_Plotter/>`_
-* `app's Issue Tracker <https://github.com/camurria/GW_Data_Plotter/issues>`_
+* `Zenodo record <https://doi.org/10.5281/zenodo.13778827>`_
+* `GitHub repository <https://github.com/camurria/GW_Data_Plotter/>`_
+* `Issue Tracker <https://github.com/camurria/GW_Data_Plotter/issues>`_
 * `GWpy Python package  <https://gwpy.github.io/>`_
 * `Gravitational Wave Open Science Center <https://gwosc.org/>`_
 * `article as part of the #AHEAD2020_science campaign <http://ahead.astro.noa.gr/?p=3170>`_
