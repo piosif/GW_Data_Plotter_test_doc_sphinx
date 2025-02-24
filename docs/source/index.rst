@@ -10,8 +10,8 @@ and facilitates basic visualization and analysis.
 The app allows users to download *public* gravitational wave data from the LIGO, Virgo, KAGRA, and 
 GEO detectors via the `Gravitational Wave Open Science Center <https://gwosc.org>`_. 
 
-- `Source Code @ GitHub <https://github.com/camurria/GW_Data_Plotter/>`_
-- `Issue Tracker <https://github.com/camurria/GW_Data_Plotter/issues>`_
+- `Source Code @ GitHub`_
+- `Issue Tracker`_
 
 .. Zenodo badge that points to the latest release
 .. image:: https://img.shields.io/badge/dynamic/json?url=https://zenodo.org/api/records/13778827&label=DOI&query=$.doi&color=blue   
@@ -59,6 +59,12 @@ of the app you have used. You can find the DOI in the `Zenodo repository`_. See 
 for different citation formats.
 
 
+Report an issue
+---------------
+
+If you encounter any bugs or issues while using the app, or you would like to share your feedback please create a *New issue* on the `Issue Tracker`_. 
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents
@@ -80,4 +86,6 @@ Please read the `license`_ text for full details.
 
 .. _Zenodo repository: https://zenodo.org/records/13778827
 .. _license: https://choosealicense.com/licenses/gpl-3.0/
+.. _Source Code @ GitHub: https://github.com/camurria/GW_Data_Plotter/
+.. _Issue Tracker: https://github.com/camurria/GW_Data_Plotter/issues
 
