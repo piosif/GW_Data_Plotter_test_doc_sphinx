@@ -2,10 +2,12 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Useful Links" href="links.html" /><link rel="prev" title="Plot Data" href="plot_data.html" />
 
-    <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 --><title>Index - GW Data Plotter documentation</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
+        <title>Explore Data - GW Data Plotter documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     
@@ -176,7 +178,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -197,13 +199,13 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="description.html">Description</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get_data.html">Get Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot_data.html">Plot Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explore_data.html">Explore Data</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Explore Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="links.html">Useful Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ack.html">Acknowledgments</a></li>
 </ul>
@@ -225,7 +227,13 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/explore_data.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -234,16 +242,66 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
-<section class="genindex-section">
-  <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"></div>
+          <section id="explore-data">
+<h1>Explore Data<a class="headerlink" href="#explore-data" title="Link to this heading">¶</a></h1>
+<p>The <span class="guilabel">Explore GW event parameters</span> tab allows users to download skymaps of GW events and
+analyze parameter distributions with histograms and scatter plots.
+To understand the meaning of the different parameters names you can have a look at <a class="reference external" href="https://gwosc.org/apidocs/">this link</a> (under “Event Portal”).
+This tab is organised in two main sections:</p>
+<a class="reference internal image-reference" href="_images/explore_data_tab.png"><img alt="_images/explore_data_tab.png" class="align-center" src="_images/explore_data_tab.png" style="width: 100%;" />
+</a>
+<section id="event-parameters">
+<h2>Event parameters<a class="headerlink" href="#event-parameters" title="Link to this heading">¶</a></h2>
+<p>The section <span class="guilabel">Event parameters</span> is useful to explore the parameters of a single known GW event.
+Users can select an event from a list of showcase events or type the name of a published event.
+By clicking on <span class="guilabel">Get event parameters</span> users can, then, get the event’s main parameters, that will
+be displayed in the <span class="guilabel">Log window</span>.</p>
+<p>It is also possible to download the skymap for the selected event (skymap is the event’s localization
+on the sky) using the button <span class="guilabel">Download skymap</span>.
+Note that in this last case, the skymap will be downloaded on your PC as a <code class="docutils literal notranslate"><span class="pre">png</span></code> file and then shown.</p>
+</section>
+<section id="parameters-distributions">
+<h2>Parameters distributions<a class="headerlink" href="#parameters-distributions" title="Link to this heading">¶</a></h2>
+<p>The <span class="guilabel">Parameters distributions</span> section gives the possibility to retrieve the values of
+selected GW event parameters from all published catalogs and plot them as either a histogram or a
+two-dimensional scatter plot.</p>
+<ul class="simple">
+<li><p>The selected GW event parameters are:</p>
+<ul>
+<li><p>primary mass of the binary system</p></li>
+<li><p>secondary mass of the binary system</p></li>
+<li><p>chirp mass</p></li>
+<li><p>remnant mass</p></li>
+<li><p>luminosity distance</p></li>
+<li><p>signal-to-noise ratio</p></li>
+<li><p>merger time</p></li>
+</ul>
+</li>
+<li><p>The procedure to create a histogram and a scatter plot is the following:</p>
+<ol class="arabic simple">
+<li><p>Select one parameter from the drop-down menu.</p></li>
+<li><p>Use the button <span class="guilabel">Plot histogram</span> to get the distribution of values on that parameter
+(the parameter values for all published events are downloaded automatically).</p></li>
+<li><p>Select another parameter from the lower drop-down menu.</p></li>
+<li><p>Use the button <span class="guilabel">2D scatter plot</span> to get a scatter plot with the first parameter on the
+x-axis and the second on the y-axis (the parameter values for all published events are downloaded
+automatically if needed).</p></li>
+<li><p>If users have previously downloaded the parameters of a specific GW event, they have the option to
+highlight it in the histogram and scatter plots by selecting the check box
+<span class="guilabel">Highlight current event</span>.</p></li>
+<li><p>The axes of the plots can be set to logarithmic scale by using the corresponding checkboxes.
+Note, however, that if you enable <span class="guilabel">Log x-axis</span> when plotting a histogram you will have
+a histogram of the logarithm of the parameter value.</p></li>
+</ol>
+</li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -251,8 +309,26 @@
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="links.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Useful Links</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="plot_data.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Plot Data</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -271,8 +347,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Explore Data</a><ul>
+<li><a class="reference internal" href="#event-parameters">Event parameters</a></li>
+<li><a class="reference internal" href="#parameters-distributions">Parameters distributions</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -2,10 +2,12 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Plot Data" href="plot_data.html" /><link rel="prev" title="Description" href="description.html" />
 
-    <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 --><title>Index - GW Data Plotter documentation</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
+        <title>Get Data - GW Data Plotter documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     
@@ -176,7 +178,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -197,11 +199,11 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="description.html">Description</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get_data.html">Get Data</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Get Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot_data.html">Plot Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="explore_data.html">Explore Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="links.html">Useful Links</a></li>
@@ -225,7 +227,13 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/get_data.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -234,16 +242,65 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
-<section class="genindex-section">
-  <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"></div>
+          <section id="get-data">
+<h1>Get Data<a class="headerlink" href="#get-data" title="Link to this heading">¶</a></h1>
+<p>The <span class="guilabel">Get Data</span> tab allows users to download publicly available GW data originally hosted on the
+<a class="reference external" href="https://gwosc.org/">GWOSC</a> website. Users can download data in one of the following ways:</p>
+<a class="reference internal image-reference" href="_images/get_data_tab.png"><img alt="_images/get_data_tab.png" class="align-center" src="_images/get_data_tab.png" style="width: 100%;" />
+</a>
+<section id="by-time-interval">
+<h2>By time interval<a class="headerlink" href="#by-time-interval" title="Link to this heading">¶</a></h2>
+<p>Under the <span class="guilabel">Select Data by time interval</span> section the user can specify a time interval by typing the starting and
+ending times in GPS format, which is the convention used by the GW community.
+In this convention, the time is calculated by counting seconds from a reference date (6th January 1980).
+To convert <a class="reference external" href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC time</a> to GPS time format visit <a class="reference external" href="https://gwosc.org/gps/">this link</a>.</p>
+</section>
+<section id="by-selecting-a-known-gw-event">
+<h2>By selecting a known GW event<a class="headerlink" href="#by-selecting-a-known-gw-event" title="Link to this heading">¶</a></h2>
+<p>Under the <span class="guilabel">Select a known GW event</span> section, users can choose to download a few showcase GW events
+or type the name of a specific GW event published by the LIGO-Virgo-KAGRA (LVK) collaboration.
+To get the GPS times and names of all known detections, check <a class="reference external" href="https://gwosc.org/eventapi/">this page</a>.</p>
+<p>The subsection <span class="guilabel">Select duration of data segment</span> can be used to decide how many seconds of data you want
+to download before and after the merger time of the event.
+The starting time for the data download is calculated as <code class="code docutils literal notranslate"><span class="pre">(merger</span> <span class="pre">time)</span> <span class="pre">+</span> <span class="pre">(time</span> <span class="pre">before</span> <span class="pre">the</span> <span class="pre">merger)</span></code> so the
+time before the merger is expected to be a negative number.</p>
+</section>
+<section id="by-selecting-a-known-glitch">
+<h2>By selecting a known glitch<a class="headerlink" href="#by-selecting-a-known-glitch" title="Link to this heading">¶</a></h2>
+<p>A glitch is a short-time noise artifact which can mimic a GW signal.
+Possible glitches are already identified in the LVK data.
+Under the <span class="guilabel">Select an example of a known glitch</span> section, users can select
+to download a few examples of glitches.
+A good source to get the full list of known glitches (with their GPS times of occurrence) in the first three
+observing runs is the <a class="reference external" href="https://zenodo.org/records/5649212">GravitySpy Zenodo repository</a>.</p>
+</section>
+<section id="data-handling">
+<h2>Data handling<a class="headerlink" href="#data-handling" title="Link to this heading">¶</a></h2>
+<p>The <span class="guilabel">Get Data</span> tab contains 3 buttons:</p>
+<ul class="simple">
+<li><p><span class="guilabel">Download Data</span>: download the data and save them in memory for later plotting (no file will be saved on your PC)</p></li>
+<li><p><span class="guilabel">Load data</span>: load data from a file already saved locally in one of the formats: <code class="docutils literal notranslate"><span class="pre">hdf5</span></code>, <code class="docutils literal notranslate"><span class="pre">gwf</span></code> and
+<code class="docutils literal notranslate"><span class="pre">txt</span></code>.
+The loading can read any file previously saved with the <strong>GW Data Plotter</strong> app or downloaded from the
+<a class="reference external" href="https://gwosc.org/">GWOSC</a> website.</p></li>
+<li><p><span class="guilabel">Save data</span>: save data already downloaded in a local file. Also in this case the formats available are
+<code class="docutils literal notranslate"><span class="pre">hdf5</span></code>, <code class="docutils literal notranslate"><span class="pre">gwf</span></code> and <code class="docutils literal notranslate"><span class="pre">txt</span></code>.</p></li>
+</ul>
+</section>
+<section id="whitening">
+<span id="whitening-section-label"></span><h2>Whitening<a class="headerlink" href="#whitening" title="Link to this heading">¶</a></h2>
+<p>The whitening procedure allows data to be re-weighted according to the detector noise at each frequency,
+so it is equivalent to a sort of noise removal.
+We strongly advise using it when possible.
+To use the whitening procedure, we suggest downloading at least 2 seconds of data.
+Remember to select a detector if you are downloading the data via time interval or selecting a known GW event.</p>
+</section>
 </section>
 
         </article>
@@ -251,8 +308,26 @@
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="plot_data.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Plot Data</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="description.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Description</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -271,8 +346,31 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Get Data</a><ul>
+<li><a class="reference internal" href="#by-time-interval">By time interval</a></li>
+<li><a class="reference internal" href="#by-selecting-a-known-gw-event">By selecting a known GW event</a></li>
+<li><a class="reference internal" href="#by-selecting-a-known-glitch">By selecting a known glitch</a></li>
+<li><a class="reference internal" href="#data-handling">Data handling</a></li>
+<li><a class="reference internal" href="#whitening">Whitening</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

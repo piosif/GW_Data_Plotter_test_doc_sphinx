@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="App_draft_doc documentation" href="index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Get Data" href="get_data.html" /><link rel="prev" title="Installation" href="install.html" />
 
-    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Hello, World! - App_draft_doc documentation</title>
+    <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
+        <title>Description - GW Data Plotter documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
@@ -166,7 +166,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">App_draft_doc  documentation</div></a>
+      <a href="index.html"><div class="brand">GW Data Plotter  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -190,7 +190,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">App_draft_doc  documentation</span>
+  <span class="sidebar-brand-text">GW Data Plotter  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -198,9 +198,16 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Hello, World!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_data.html">Get Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_data.html">Plot Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore_data.html">Explore Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">Useful Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ack.html">Acknowledgments</a></li>
 </ul>
 
 </div>
@@ -221,7 +228,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="_sources/sample_page.md.txt" title="View this page">
+  <a class="muted-link" href="_sources/description.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -241,32 +248,32 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="hello-world">
-<h1>Hello, World!<a class="headerlink" href="#hello-world" title="Link to this heading">¶</a></h1>
-<p>Welcome to the <strong>App_draft_doc</strong> documentation.</p>
-<p>This is a simple example of a document written in Markdown.</p>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
-<p>Markdown is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML and many other formats using a tool like Sphinx.</p>
+          <section id="description">
+<h1>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h1>
+<section id="gui-overview">
+<h2>GUI overview<a class="headerlink" href="#gui-overview" title="Link to this heading">¶</a></h2>
+<p>The content is organised in three tabs, see the respective pages for details:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="get_data.html"><span class="doc">Get Data</span></a></p></li>
+<li><p><a class="reference internal" href="plot_data.html"><span class="doc">Plot Data</span></a></p></li>
+<li><p><a class="reference internal" href="explore_data.html"><span class="doc">Explore Data</span></a></p></li>
+</ul>
+<p>All the tabs have two common features, a <span class="guilabel">Help</span> button and a <span class="guilabel">Log window</span>.</p>
+<ul class="simple">
+<li><p>The <span class="guilabel">Help</span> button displays documentation specific to each tab in a separate window.</p></li>
+<li><p>The <span class="guilabel">Log window</span> displays the output of ongoing operations (e.g. the status of downloads)
+or tips (e.g. for plotting). The most recent messages will appear in the upper part of the window.</p></li>
+</ul>
+<p>The app will also display warning messages to guide users when they enter invalid input or specify conflicting options.</p>
 </section>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h2>
-<p>Here is a simple “Hello, World!” example:</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Hello, World!</span>
-
-This is a simple Markdown document.
-
-<span class="k">-</span><span class="w"> </span>Item 1
-<span class="k">-</span><span class="w"> </span>Item 2
-<span class="k">-</span><span class="w"> </span>Item 3
-
-<span class="gs">**Bold Text**</span>
-
-<span class="ge">*Italic Text*</span>
-
-[<span class="nt">Link to Sphinx documentation</span>](<span class="na">https://www.sphinx-doc.org/en/master/</span>)
-</pre></div>
-</div>
+<section id="technical-details">
+<h2>Technical details<a class="headerlink" href="#technical-details" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>GW Data Plotter</strong> is written in <em>Python</em>.</p></li>
+<li><p>Its main functionalities are based on packages <a class="reference external" href="https://gwosc.readthedocs.io/en/stable/">gwosc</a> and <a class="reference external" href="https://gwpy.github.io/">GWpy</a> developed by the GW community.</p></li>
+<li><p>The graphical interface was created with <a class="reference external" href="https://en.wikipedia.org/wiki/Qt_(software)">Qt</a>, a cross-platform GUI toolkit, using the <em>Python</em> binding <a class="reference external" href="https://www.riverbankcomputing.com/software/pyqt/">PyQt</a>.</p></li>
+<li><p>The standalone executable files are created with <a class="reference external" href="https://pyinstaller.org/en/stable/">PyInstaller</a>.</p></li>
+</ul>
 </section>
 </section>
 
@@ -275,15 +282,23 @@ This is a simple Markdown document.
       <footer>
         
         <div class="related-pages">
-          
-          <a class="prev-page" href="index.html">
+          <a class="next-page" href="get_data.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Get Data</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="install.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">Installation</div>
                 
               </div>
             </a>
@@ -291,7 +306,7 @@ This is a simple Markdown document.
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2025, Panagiotis Iosif
+                Copyright &#169; 2025, Panagiotis Iosif and Agata Trovato
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -317,9 +332,9 @@ This is a simple Markdown document.
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Hello, World!</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#">Description</a><ul>
+<li><a class="reference internal" href="#gui-overview">GUI overview</a></li>
+<li><a class="reference internal" href="#technical-details">Technical details</a></li>
 </ul>
 </li>
 </ul>
