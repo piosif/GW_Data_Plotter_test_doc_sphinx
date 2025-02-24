@@ -21,7 +21,7 @@ from gwosc.api import fetch_event_json, fetch_json
 from layout import Ui_MainWindow
 # from layout_macOS import Ui_MainWindow #PI: use a different layout for MacOS for the 'About' item
 
-
+# Test CHANGE
 
 import app_resources #PI: use a resources file (.qrc) to include images and fonts
 
